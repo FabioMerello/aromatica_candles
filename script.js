@@ -1,104 +1,172 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ====== NAVBAR / HERO SAFE ======
     const navbar = document.getElementById('navbar');
-    const hero = document.getElementById('hero');
+    const hero = document.getElementById('hero') || document.querySelector('.hero'); // fallback per pagine categoria
     const nav = document.getElementById('nav');
     const menuToggle = document.getElementById('menu-toggle');
 
-    // Funzione per aggiornare la navbar dopo scroll
     const updateNavbarOnScroll = () => {
-        const heroBottom = hero.offsetTop + hero.offsetHeight;
-        if (window.scrollY > heroBottom - 60) {
-            navbar.classList.add('scrolled');
+        if (!navbar) return;
+        if (hero) {
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            if (window.scrollY > heroBottom - 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         } else {
-            navbar.classList.remove('scrolled');
+            // Se non c'è hero (pagine categoria), applica scrolled dopo poco scroll
+            if (window.scrollY > 20) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         }
     };
 
-    // Chiama subito all'apertura
     updateNavbarOnScroll();
-
-    // Scroll listener
     window.addEventListener('scroll', updateNavbarOnScroll);
 
-    // Toggle del menu mobile
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('open');
-        menuToggle.classList.toggle('active');
-    });
-
-    // Chiudi menu mobile al click su un link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('open');
-            menuToggle.classList.remove('active');
+    // ====== MENU TOGGLE (robusto) ======
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+            const opened = nav.classList.contains('open');
+            menuToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
         });
-    });
 
-    // Scroll fluido
+        // Chiudi il menu al click su un link (UX mobile)
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    // ====== SCROLL FLUIDO (solo anchor locali "#") ======
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetID = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetID);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const href = this.getAttribute('href') || '';
+            // Solo se l'anchor è locale (#qualcosa). Per link tipo "index.html#about" non intercettiamo.
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetID = href.substring(1);
+                const targetElement = document.getElementById(targetID);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }
         });
     });
 
-    // Inizializzazione AOS se presente
+    // ====== AOS (se presente) ======
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true });
     }
-});
 
-//swiper
-const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
+    // ====== SWIPER (solo se presente nella pagina) ======
+    if (typeof Swiper !== 'undefined' && document.querySelector('.mySwiper')) {
+        new Swiper('.mySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: { delay: 2500, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        });
+    }
 
-// Funzione per nascondere banner
-const banner = document.getElementById('cookie-banner');
-const acceptBtn = document.getElementById('accept-cookies');
+    // ====== COOKIE BANNER (solo se presente nella pagina) ======
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
 
-function hideBanner() {
-    banner.classList.remove('show');
-    setTimeout(() => {
-        banner.style.display = 'none';
-    }, 600); // aspetta la fine della transizione
-}
+    if (banner && acceptBtn) {
+        function hideBanner() {
+            banner.classList.remove('show');
+            setTimeout(() => { banner.style.display = 'none'; }, 600);
+        }
+        function showBanner() {
+            banner.style.display = 'flex';
+            setTimeout(() => { banner.classList.add('show'); }, 50);
+        }
+        if (localStorage.getItem('cookieAccepted') !== 'true') {
+            showBanner();
+        }
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieAccepted', 'true');
+            hideBanner();
+        });
+    }
 
-function showBanner() {
-    banner.style.display = 'flex'; // necessario per flex box
-    // piccola pausa per triggerare la transizione
-    setTimeout(() => {
-        banner.classList.add('show');
-    }, 50);
-}
+    // ====== FILTRI PRODOTTI (sezione categoria) ======
+    const productsGrid = document.getElementById('products-grid');
+    if (productsGrid) {
+        const searchInput = document.getElementById('search-input');       // testo libero
+        const sortPrice = document.getElementById('sort-price');           // default | asc | desc
+        const categoryFilter = document.getElementById('filter-category'); // all | candela | set | ...
+        const priceBand = document.getElementById('filter-price');         // all | low | mid | high
 
-// Se non ha accettato, mostra il banner
-if (localStorage.getItem('cookieAccepted') !== 'true') {
-    showBanner();
-}
+        const getCards = () => Array.from(productsGrid.querySelectorAll('.product-card'));
 
-acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookieAccepted', 'true');
-    hideBanner();
+        function matchesPriceBand(price, band) {
+            if (band === 'low') return price < 15;
+            if (band === 'mid') return price >= 15 && price <= 20;
+            if (band === 'high') return price > 20;
+            return true; // 'all'
+        }
+
+        function applyFilters() {
+            const text = (searchInput?.value || '').toLowerCase();
+            const cat = categoryFilter?.value || 'all';
+            const band = priceBand?.value || 'all';
+
+            getCards().forEach(card => {
+                const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+                const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+                const price = parseFloat(card.dataset.price || '0');
+                const cardCat = card.dataset.category || '';
+
+                const okText = title.includes(text) || desc.includes(text);
+                const okCat = (cat === 'all') || (cardCat === cat);
+                const okPrice = matchesPriceBand(price, band);
+
+                card.style.display = (okText && okCat && okPrice) ? 'flex' : 'none';
+            });
+        }
+
+        function applySort() {
+            if (!sortPrice || sortPrice.value === 'default') return;
+            const cards = getCards();
+
+            cards.sort((a, b) => {
+                const pa = parseFloat(a.dataset.price || '0');
+                const pb = parseFloat(b.dataset.price || '0');
+                return sortPrice.value === 'asc' ? pa - pb : pb - pa;
+            });
+
+            // Ri-append solo le card visibili, mantenendo anche quelle nascoste in fondo
+            const visible = cards.filter(c => c.style.display !== 'none');
+            const hidden = cards.filter(c => c.style.display === 'none');
+
+            productsGrid.innerHTML = '';
+            visible.concat(hidden).forEach(c => productsGrid.appendChild(c));
+        }
+
+        function updateList() {
+            applyFilters();
+            applySort();
+        }
+
+        // Event listeners (solo se gli elementi esistono)
+        if (searchInput) searchInput.addEventListener('input', updateList);
+        if (sortPrice) sortPrice.addEventListener('change', updateList);
+        if (categoryFilter) categoryFilter.addEventListener('change', updateList);
+        if (priceBand) priceBand.addEventListener('change', updateList);
+
+        // Prima applicazione
+        updateList();
+    }
 });
