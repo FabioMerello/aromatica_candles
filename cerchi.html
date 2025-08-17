@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collezione Cerchi – Aromantica Candles</title>
+    <link rel="icon" href="Aromantica.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+    <img src="Aromantica.png" alt="Aromantica logo" class="logo">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">Chi siamo</a>
+        <a href="index.html#catalogo">Catalogo</a>
+        <a href="index.html#contact">Contatti</a>
+    </nav>
+</header>
+
+<!-- Hero categoria -->
+<section class="hero hero-small">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <h1>Collezione Cerchi</h1>
+        <p>Eleganti cerchi decorativi per ogni occasione</p>
+    </div>
+</section>
+
+<!-- Filtri -->
+<div class="filter-bar" data-aos="fade-up">
+    <input type="text" id="search-input" placeholder="Cerca prodotto...">
+    <select id="sort-price">
+        <option value="default">Ordina per prezzo</option>
+        <option value="asc">Prezzo: dal più basso</option>
+        <option value="desc">Prezzo: dal più alto</option>
+    </select>
+
+    <select id="filter-category">
+        <option value="all">Tutte le categorie</option>
+        <option value="cerchio">Cerchi</option>
+        <option value="set">Set decorativi</option>
+    </select>
+
+    <select id="filter-price">
+        <option value="all">Tutti i prezzi</option>
+        <option value="low">Meno di €15</option>
+        <option value="mid">€15 - €20</option>
+        <option value="high">Più di €20</option>
+    </select>
+</div>
+
+<!-- Prodotti -->
+<section class="products-section" data-aos="fade-up">
+    <h2>I nostri prodotti</h2>
+    <div class="products-grid" id="products-grid">
+
+        <div id="product-rosa" class="product-card" data-price="15" data-category="cerchio">
+            <img src="https://example.com/cerchio-rosa.jpg" alt="Cerchio decorativo rosa">
+            <div class="product-info">
+                <h3>Cerchio Rosa</h3>
+                <p>Cerchio decorativo in legno verniciato rosa, perfetto per decorare stanze e feste.</p>
+                <span class="price">€15</span>
+                <a href="index.html#contact" class="btn">Richiedi info</a>
+            </div>
+        </div>
+
+        <div id="product-azzurra" class="product-card" data-price="18" data-category="cerchio">
+            <img src="https://example.com/cerchio-azzurro.jpg" alt="Cerchio decorativo azzurro">
+            <div class="product-info">
+                <h3>Cerchio Azzurro</h3>
+                <p>Cerchio azzurro con dettagli in tessuto, ideale come elemento decorativo elegante.</p>
+                <span class="price">€18</span>
+                <a href="index.html#contact" class="btn">Richiedi info</a>
+            </div>
+        </div>
+
+        <div id="product-set" class="product-card" data-price="25" data-category="set">
+            <img src="https://example.com/set-cerchi.jpg" alt="Set di cerchi decorativi">
+            <div class="product-info">
+                <h3>Set Cerchi</h3>
+                <p>Set di 3 cerchi decorativi, personalizzabili e perfetti per ogni tipo di allestimento.</p>
+                <span class="price">€25</span>
+                <a href="index.html#contact" class="btn">Richiedi info</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Aromantica Candles – Tutti i diritti riservati</p>
+    <p>
+        <a href="tel:+393331112223"> +39 333 111 2223</a> |
+        <a href="mailto:info@almafavignana.it"> info@almafavignana.it</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </p>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+
+</script>
+</body>
+</html>

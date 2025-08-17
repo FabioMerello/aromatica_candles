@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collezione Flowers – Aromantica Candles</title>
+  <link rel="icon" href="Aromantica.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <img src="Aromantica.png" alt="Aromantica logo" class="logo">
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <nav class="nav-links" id="nav">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#about">Chi siamo</a>
+    <a href="index.html#catalogo">Catalogo</a>
+    <a href="index.html#contact">Contatti</a>
+  </nav>
+</header>
+
+<!-- Hero categoria -->
+<section class="hero hero-small">
+  <div class="hero-overlay"></div>
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Collezione Flowers</h1>
+    <p>Bomboniere eleganti a tema floreale per ogni occasione speciale</p>
+  </div>
+</section>
+
+<!-- Filtri -->
+<div class="filter-bar" data-aos="fade-up">
+  <input type="text" id="search-input" placeholder="Cerca prodotto...">
+  <select id="sort-price">
+    <option value="default">Ordina per prezzo</option>
+    <option value="asc">Prezzo: dal più basso</option>
+    <option value="desc">Prezzo: dal più alto</option>
+  </select>
+
+  <select id="filter-category">
+    <option value="all">Tutte le categorie</option>
+    <option value="bomboniera">Bomboniere singole</option>
+    <option value="set">Set bomboniere</option>
+  </select>
+
+  <select id="filter-price">
+    <option value="all">Tutti i prezzi</option>
+    <option value="low">Meno di €15</option>
+    <option value="mid">€15 - €25</option>
+    <option value="high">Più di €25</option>
+  </select>
+</div>
+
+<!-- Prodotti -->
+<section class="products-section" data-aos="fade-up">
+  <h2>I nostri prodotti</h2>
+  <div class="products-grid" id="products-grid">
+
+    <div id="product-flower-rosa" class="product-card" data-price="12" data-category="bomboniera">
+      <img src="https://example.com/bomboniera-rosa.jpg" alt="Bomboniera rosa a tema fiore">
+      <div class="product-info">
+        <h3>Bomboniera Rosa</h3>
+        <p>Elegante bomboniera rosa con dettagli floreali, perfetta per battesimi e matrimoni.</p>
+        <span class="price">€12</span>
+        <a href="index.html#contact" class="btn">Richiedi info</a>
+      </div>
+    </div>
+
+    <div id="product-flower-bianco" class="product-card" data-price="14" data-category="bomboniera">
+      <img src="https://example.com/bomboniera-bianca.jpg" alt="Bomboniera bianca a tema fiore">
+      <div class="product-info">
+        <h3>Bomboniera Bianca</h3>
+        <p>Bomboniera bianca con decorazioni floreali delicate, ideale per ogni cerimonia.</p>
+        <span class="price">€14</span>
+        <a href="index.html#contact" class="btn">Richiedi info</a>
+      </div>
+    </div>
+
+    <div id="product-flower-set" class="product-card" data-price="30" data-category="set">
+      <img src="https://example.com/set-bomboniere.jpg" alt="Set bomboniere floreali">
+      <div class="product-info">
+        <h3>Set Bomboniere Flowers</h3>
+        <p>Set di bomboniere floreali assortite, perfetto per eventi e regali coordinati.</p>
+        <span class="price">€30</span>
+        <a href="index.html#contact" class="btn">Richiedi info</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Aromantica Candles – Tutti i diritti riservati</p>
+  <p>
+    <a href="tel:+393331112223"> +39 333 111 2223</a> |
+    <a href="mailto:info@almafavignana.it"> info@almafavignana.it</a> |
+    <a href="privacy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+</body>
+</html>

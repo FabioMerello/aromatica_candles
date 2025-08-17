@@ -170,3 +170,50 @@ document.addEventListener('DOMContentLoaded', () => {
         updateList();
     }
 });
+
+// FAQ toggle
+document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const answer = btn.nextElementSibling;
+        btn.classList.toggle("active");
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+            btn.querySelector("span").textContent = "+";
+        } else {
+            answer.style.display = "block";
+            btn.querySelector("span").textContent = "−";
+        }
+    });
+});
+
+// Counter animati
+const counters = document.querySelectorAll('.counter');
+let countersStarted = false;
+
+function animateCounters() {
+    counters.forEach(counter => {
+        const update = () => {
+            const target = +counter.getAttribute('data-target');
+            const current = +counter.innerText;
+            const increment = Math.ceil(target / 100);
+
+            if (current < target) {
+                counter.innerText = current + increment;
+                setTimeout(update, 30);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        update();
+    });
+}
+
+window.addEventListener('scroll', () => {
+    const section = document.querySelector('#counters');
+    const sectionPos = section.getBoundingClientRect().top;
+    const screenPos = window.innerHeight;
+    if (sectionPos < screenPos && !countersStarted) {
+        animateCounters();
+        countersStarted = true;
+    }
+});
