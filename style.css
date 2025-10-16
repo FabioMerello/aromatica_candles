@@ -6,14 +6,14 @@ html {
 
 :root {
     --marine: #FAF9F6;
-    --sand: #EACDC2;
-    --dark: #1e1e1e;
+    --sand: #f5e6d3;
+    --dark: #3b2f2f;
 }
 
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background: var(--sand);
+    background: #f5e6d3;
     color: #98443a;
 }
 
@@ -68,7 +68,14 @@ body {
 }
 
 .logo {
-    height: 50px;
+    height: 80px;              /* leggermente più grande, se vuoi */
+    width: 80px;               /* serve per ottenere un cerchio perfetto */
+    border-radius: 50%;        /* arrotonda fino a formare il cerchio */
+
+    object-fit: cover;         /* adatta il logo all’interno del cerchio */
+
+    box-sizing: border-box;    /* il padding non altera le dimensioni complessive */
+    background-color: #fff;    /* opzionale: sfondo bianco dentro il cerchio */
 }
 
 .nav-links {
@@ -243,13 +250,13 @@ body {
 #about {
     padding: 4rem 1rem;
     text-align: center;
-    background: var(--sand);
+    background: #f5e6d3;
 }
 
 #about h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: var(--marine);
+    color: #8b4e3d;
 }
 
 #about p {
@@ -312,7 +319,7 @@ body {
 
 .benefit-item p {
     margin: 0.3rem 0 0;
-    color: #555;
+    color: #5a4632;
     font-size: 0.95rem;
 }
 
@@ -328,16 +335,17 @@ body {
 
 /* Catalogo - stile adattato come Eventi */
 .catalogo-section {
-    padding: 60px 0 0 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
     text-align: center;
-    background: var(--sand);
+    background: #f5e6d3;
 }
 
 .catalogo-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     font-weight: 600;
-    color: #B76E79;
+    color: #8b4e3d;
 }
 
 .catalogo-intro {
@@ -345,7 +353,7 @@ body {
     margin: 0 auto 50px auto;
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #555;
+    color: #5a4632;
 }
 
 /* Blocchi del catalogo (stile eventi, senza margine tra i div) */
@@ -476,7 +484,7 @@ a:active {
 
 .reviews-section h2 {
     font-size: 2rem;
-    color: #B76E79; /* oro rosato */
+    color: #8b4e3d; /* oro rosato */
     margin-bottom: 2.5rem;
 }
 
@@ -535,7 +543,7 @@ a:active {
 /* FAQ */
 .faq-section {
     padding: 60px 20px;
-    background: var(--sand);
+    background: #f5e6d3;
     text-align: center;
 }
 .faq-container {
@@ -562,14 +570,14 @@ a:active {
     display: none;
     padding: 0 15px 15px;
     font-size: 0.95rem;
-    color: #444;
+    color: #4a3b30;
 }
 
 /* Counter */
 .counter-section {
     padding: 60px 20px;
     text-align: center;
-    background: var(--sand);
+    background: #f5e6d3;
 }
 .counter-container {
     display: grid;
@@ -584,20 +592,20 @@ a:active {
 }
 .counter-box .counter {
     font-size: 2.5rem;
-    color: #e85a70;
+    color: #a0563c;
     display: block;
 }
 
 /* Sezione Eventi */
 .eventi-section {
-    padding: 60px 0;
+    padding: 0 0 60px 0; /* tolto il padding-top */
     text-align: center;
 }
 .eventi-intro {
     max-width: 700px;
     margin: 0 auto 40px;
     font-size: 1.1rem;
-    color: #555;
+    color: #5a4632;
 }
 
 /* Blocco evento */
@@ -669,7 +677,7 @@ a:active {
 }
 
 .eventi-form button {
-    background: #e85a70;
+    background: #a0563c;
     color: #fff;
     padding: 12px 25px;
     border: none;
@@ -679,7 +687,7 @@ a:active {
     transition: background 0.3s;
 }
 .eventi-form button:hover {
-    background: #d04b60;
+    background: #8c3b2d;
 }
 
 /*  Mobile: form più stretto */
@@ -700,13 +708,13 @@ a:active {
 .gallery-section {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--sand); /* colore di sfondo */
+    background: #f5e6d3; /* colore di sfondo */
 }
 
 .gallery-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #333; /* o un colore coerente col tema */
+    color: #3b2f2f; /* o un colore coerente col tema */
 }
 
 /* Swiper container */
@@ -801,7 +809,7 @@ a:active {
 .cta {
     padding: 3rem 1rem;
     background-color: var(--sand);
-    color: #003049; /* colore testo - blu mare */
+    color: #4b2e1f; /* colore testo - blu mare */
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -839,7 +847,7 @@ a:active {
 .contact-form input,
 .contact-form textarea {
     padding: 0.8rem 1rem;
-    border: 2px solid #003049;
+    border: 2px solid #4b2e1f;
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
@@ -975,14 +983,14 @@ a:active {
 
 /* Footer */
 footer {
-    background: var(--sand);
-    color: #B76E79  ;
+    background: #f5e6d3;
+    color: #8b4e3d  ;
     text-align: center;
     padding: 2rem 1rem;
 }
 
 footer a {
-    color: #B76E79;
+    color: #8b4e3d;
     text-decoration: none;
     margin: 0 0.5rem;
     transition: opacity 0.3s ease;
@@ -1086,14 +1094,14 @@ footer a:hover {
 .products-section {
     padding: 60px 20px;
     text-align: center;
-    background: var(--sand);
+    background: #f5e6d3;
 }
 
 .products-section h2 {
     font-size: 2rem;
     margin-bottom: 40px;
     font-weight: 600;
-    color: #444;
+    color: #4a3b30;
 }
 
 /* Font generale per la filter-bar */
@@ -1123,7 +1131,7 @@ footer a:hover {
     max-width: 300px;
     transition: all 0.3s ease;
     background: #fff;
-    color: #333;
+    color: #3b2f2f;
 }
 
 .filter-bar input[type="text"]:focus {
@@ -1142,7 +1150,7 @@ footer a:hover {
     max-width: 220px;
     transition: all 0.3s ease;
     background: #fff;
-    color: #333;
+    color: #3b2f2f;
     appearance: none; /* rimuove la freccia di default */
     background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><polygon points='0,0 16,0 8,8' fill='%239c27b0'/></svg>");
     background-repeat: no-repeat;
@@ -1166,7 +1174,7 @@ footer a:hover {
 /* Opzioni più carine */
 .filter-bar option {
     font-size: 0.95rem;
-    color: #333;
+    color: #3b2f2f;
     padding: 0.5rem 1rem;
     background: #fff;
     transition: all 0.2s ease;
@@ -1236,7 +1244,7 @@ footer a:hover {
 }
 .product-info p {
     font-size: 0.95rem;
-    color: #555;
+    color: #5a4632;
     flex-grow: 1;
 }
 .product-info .price {
