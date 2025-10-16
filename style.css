@@ -821,7 +821,7 @@ a:active {
 }
 
 #contact h2 {
-    color: white;
+    color: #4b2e1f;
     text-align: center;
     font-weight: 600;
     margin-bottom: 2rem;
@@ -910,7 +910,7 @@ a:active {
 .social-section {
     padding: 3rem 1rem;
     background-color: var(--sand); /* un blu scuro coerente con tema mare */
-    color: var(--sand);
+    color: #4b2e1f;
     text-align: center;
 }
 
