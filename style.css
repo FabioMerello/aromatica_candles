@@ -801,7 +801,7 @@ a:active {
 .caption {
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: var(--marine); /* o colore che preferisci */
+    color: #4b2e1f; /* o colore che preferisci */
     text-align: center;
     font-weight: 500;
 }
