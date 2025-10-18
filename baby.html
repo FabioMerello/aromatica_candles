@@ -62,38 +62,70 @@
     <h2>I nostri prodotti</h2>
     <div class="products-grid" id="products-grid">
 
-        <div id="product-rosa" class="product-card" data-price="15" data-category="baby">
-            <img src="https://blog.incartare.it/wp-content/uploads/2019/04/L1090937-1000x642.jpg" alt="Candela baby rosa">
+
+        <!-- Card - Teddy -->
+        <div class="product-card">
+
+                    <img src="baby.jpeg" alt="Teddy" class="product-image">
+
+
             <div class="product-info">
-                <h3>Candela Rosa</h3>
-                <p>Delicata candela profumata alla vaniglia, con packaging personalizzato per battesimi.</p>
-                <span class="price">€15</span>
-                <a href="index.html#contact" class="btn">Richiedi info</a>
+                <h3>Teddy</h3>
+                <p>Delizioso orsetto decorativo in cera naturale. Realizzato artigianalmente, perfetto come idea regalo o complemento d’arredo.</p>
+
+                <!-- Selettori opzioni -->
+                <div class="options">
+                    <label for="size">Taglia:</label>
+                    <select id="size" class="option-select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+
+                    <label for="packaging">Confezione:</label>
+                    <select id="packaging" class="option-select">
+                        <option value="no">Senza confezione</option>
+                        <option value="yes">Con confezione</option>
+                    </select>
+                </div>
+
+                <div class="color-preview">
+                    <span class="color-label">Colorazione:</span>
+                    <div class="color-circle"></div>
+                </div>
+
+                <!-- Prezzo dinamico -->
+                <span class="price" id="teddy-price">€2,50</span>
+
+                <!-- Dettagli tecnici -->
+                <button class="show-more-btn">Dettagli tecnici</button>
+                <div class="product-full-desc">
+                    <ul>
+                        <li><strong>Colorazione:</strong> Naturale</li>
+                        <li><strong>Taglia S:</strong> h 4,5×3 cm — 20 g</li>
+                        <li><strong>Taglia M:</strong> h 7×4 cm — 55 g</li>
+                        <li><strong>Taglia L:</strong> h 8×4,5 cm — 105 g</li>
+                    </ul>
+                </div>
+
+                <!-- Bottone che apre il form -->
+                <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+
+                <!-- Form preventivo -->
+                <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+                    <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-9934-f0a6b62a4449">
+                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="product" value="Teddy">
+
+                    <input type="text" name="name" placeholder="Il tuo nome" required>
+                    <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+                    <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+
+                    <button type="submit" class="btn">Invia Richiesta</button>
+                </form>
             </div>
         </div>
 
-        <div id="product-azzurra" class="product-card" data-price="18" data-category="baby">
-            <img src="https://blog.incartare.it/wp-content/uploads/2019/03/L1080855.jpg" alt="Candela baby azzurra">
-            <div class="product-info">
-                <h3>Candela Azzurra</h3>
-                <p>Versione azzurra con fragranza fresca, ideale come bomboniera per nascite e comunioni.</p>
-                <span class="price">€18</span>
-                <a href="index.html#contact" class="btn">Richiedi info</a>
-            </div>
-        </div>
-
-        <div id="product-set" class="product-card" data-price="25" data-category="baby">
-            <img src="https://www.coccolestore.it/wp-content/uploads/2024/03/31.jpg" alt="Set bomboniera baby">
-            <div class="product-info">
-                <h3>Set Baby</h3>
-                <p>Un piccolo set regalo con candela e sacchettino, completamente personalizzabile.</p>
-                <span class="price">€25</span>
-                <a href="index.html#contact" class="btn">Richiedi info</a>
-            </div>
-        </div>
-
-
-        </div>
 
     </div>
 </section>

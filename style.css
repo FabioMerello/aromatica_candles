@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 html {
     scroll-behavior: smooth;
@@ -1217,55 +1218,265 @@ footer a:hover {
     margin-top: 20px;
 }
 
+
+
+
+/* ===============================
+   CARD PRODOTTO
+=============================== */
 .product-card {
     background: #fff;
-    border-radius: 16px;
+    border-radius: 15px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    max-width: 480px;
+    margin: 40px auto;
+    position: relative;
+    display: flex;                /* flex container */
+    flex-direction: column;       /* impila elementi verticalmente */
 }
-.product-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-.product-info {
-    padding: 20px;
-    text-align: left;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-.product-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-}
-.product-info p {
-    font-size: 0.95rem;
-    color: #5a4632;
-    flex-grow: 1;
-}
-.product-info .price {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #b88086;
-    margin: 12px 0;
-}
-.product-info .btn {
-    align-self: flex-start;
-    background: #d6a1a7;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-.product-info .btn:hover {
-    background: #b88086;
-}
+
 .product-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   IMMAGINE PRODOTTO
+=============================== */
+.product-card .product-image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    object-fit: contain; /* mantiene le proporzioni */
+    background: linear-gradient(to bottom, #fafafa, #fff);
+    border-radius: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    margin: 0;
+}
+
+
+
+/* ===============================
+   INFO PRODOTTO
+=============================== */
+.product-info {
+    padding: 25px 20px 30px 20px;
+    text-align: left;
+}
+
+.product-info h3 {
+    font-size: 1.4rem;
+    color: #222;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.product-info p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+/* ===============================
+   SELETTORI OPZIONI
+=============================== */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.options label {
+    font-weight: 500;
+    color: #444;
+}
+
+.option-select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    background: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option-select:focus {
+    border-color: #a8741a;
+    box-shadow: 0 0 6px rgba(168,116,26,0.2);
+    outline: none;
+}
+
+
+
+
+
+
+/* ===============================
+   COLORAZIONE
+=============================== */
+.color-preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.color-label {
+    font-weight: 500;
+    color: #444;
+}
+
+.color-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #e0c59b; /* colore “Naturale” */
+    border: 1px solid #ccc;
+}
+
+/* ===============================
+   PREZZO
+=============================== */
+.price {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #a8741a;
+    margin: 10px 0 20px 0;
+}
+
+/* ===============================
+   DETTAGLI TECNICI ("Leggi di più")
+=============================== */
+.product-full-desc {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    line-height: 1.6;
+    color: #555;
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 0 15px;
+    margin-top: 10px;
+}
+
+.product-full-desc.active {
+    opacity: 1;
+    max-height: 300px;
+    padding: 15px;
+}
+
+.product-full-desc ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.product-full-desc li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+}
+
+.product-full-desc li::before {
+    content: none; /* rimuove l’emoji */
+    position: absolute;
+    left: 0;
+    color: #a8741a;
+}
+
+/* Pulsante "Dettagli tecnici" */
+.show-more-btn {
+    background: none;
+    border: none;
+    color: #a8741a;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 12px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.show-more-btn:hover {
+    color: #8b6216;
+}
+
+/* ===============================
+   FORM A COMPARSA (Richiedi preventivo)
+=============================== */
+.product-form {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.6s ease;
+    margin-top: 10px;
+    background: rgba(250, 250, 250, 0.95);
+    border-radius: 12px;
+    padding: 0 15px;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.product-form.active {
+    max-height: 420px;
+    opacity: 1;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Campi form */
+.product-form input,
+.product-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.product-form input:focus,
+.product-form textarea:focus {
+    border-color: #a8741a;
+    box-shadow: 0 0 6px rgba(168,116,26,0.2);
+    outline: none;
+}
+
+/* Bottone apertura form */
+.toggle-form-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 25px;
+    background: #a8741a;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-form-btn:hover {
+    background: #8b6216;
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+    .product-card {
+        max-width: 90%;
+    }
+    .product-card .product-image {
+        height: 200px;
+    }
 }

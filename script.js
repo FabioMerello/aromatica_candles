@@ -171,6 +171,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+// LEGGI DI PIù
+document.querySelectorAll('.show-more-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const fullDesc = btn.nextElementSibling;
+
+        if (fullDesc.style.maxHeight && fullDesc.style.maxHeight !== '0px') {
+            // Chiudi
+            fullDesc.style.maxHeight = '0';
+            fullDesc.style.opacity = 0;
+            btn.textContent = 'Leggi di più';
+        } else {
+            // Apri
+            fullDesc.style.maxHeight = fullDesc.scrollHeight + 'px';
+            fullDesc.style.opacity = 1;
+            btn.textContent = 'Chiudi';
+        }
+    });
+});
+
+
+
+// FORM PRODOTTI
+document.querySelectorAll('.toggle-form-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const form = button.nextElementSibling;
+        form.classList.toggle('active');
+        button.textContent = form.classList.contains('active')
+            ? 'Chiudi Modulo ✖'
+            : 'Richiedi Preventivo';
+    });
+});
+
+
 // FAQ toggle
 document.querySelectorAll(".faq-question").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -185,6 +219,59 @@ document.querySelectorAll(".faq-question").forEach(btn => {
         }
     });
 });
+
+// costo variabile prodotti
+document.addEventListener("DOMContentLoaded", () => {
+    const sizeSelect = document.getElementById("size");
+    const packagingSelect = document.getElementById("packaging");
+    const priceDisplay = document.getElementById("teddy-price");
+
+    const prices = {
+        no: { S: 2.5, M: 4, L: 6.5 },
+        yes: { S: 4.5, M: 6, L: 8.5 }
+    };
+
+    function updatePrice() {
+        const size = sizeSelect.value;
+        const pack = packagingSelect.value;
+        const price = prices[pack][size];
+        priceDisplay.textContent = `€${price.toFixed(2).replace('.', ',')}`;
+    }
+
+    sizeSelect.addEventListener("change", updatePrice);
+    packagingSelect.addEventListener("change", updatePrice);
+
+    updatePrice();
+
+    // Gestione "Leggi di più"
+    document.querySelectorAll(".show-more-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const desc = btn.nextElementSibling;
+            desc.classList.toggle("active");
+            btn.textContent = desc.classList.contains("active")
+                ? "Nascondi dettagli"
+                : "Dettagli tecnici";
+        });
+    });
+
+    // Gestione form a comparsa
+    document.querySelectorAll(".toggle-form-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const form = btn.nextElementSibling;
+            form.classList.toggle("active");
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
 
 // Counter animati
 const counters = document.querySelectorAll('.counter');
