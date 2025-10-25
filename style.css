@@ -664,14 +664,14 @@ a:active {
     margin-top: 50px;
     max-width: 600px;
     margin-inline: auto;
-    padding: 0 20px; /* un po' di respiro ai lati */
+    padding: 0 20px;
 }
 
 .eventi-form input,
 .eventi-form textarea {
     width: 100%;
     padding: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* più spazio sotto ogni input */
     border-radius: 8px;
     border: 1px solid #ddd;
     font-size: 1rem;
@@ -686,24 +686,105 @@ a:active {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
+    margin-top: 20px; /* spazio sopra il bottone */
 }
+
 .eventi-form button:hover {
     background: #8c3b2d;
 }
 
-/*  Mobile: form più stretto */
+/* Mobile: form più stretto */
 @media (max-width: 768px) {
     .eventi-form-wrapper {
-        max-width: 90%;   /* invece di 100% */
+        max-width: 90%;
     }
 }
 @media (max-width: 480px) {
     .eventi-form-wrapper {
-        max-width: 85%;   /* ancora più contenuto su schermi molto piccoli */
+        max-width: 85%;
     }
 }
 
+/* Grid schede radio */
+.radio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px; /* più spazio tra le schede */
+    margin-bottom: 20px; /* spazio sotto ogni gruppo di radio */
+}
 
+/* Stile scheda radio */
+.radio-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px; /* leggermente più grande */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #f9f6f2;
+    text-align: center;
+}
+
+/* Nascondi radio originale */
+.radio-card input {
+    display: none;
+}
+
+/* Hover scheda */
+.radio-card:hover {
+    border-color: #a0563c;
+    background: #f4e5de;
+}
+
+/* Stato selezionato */
+.radio-card input:checked + span {
+    border-color: #a0563c;
+    background: #f4e5de;
+    color: #a0563c;
+    font-weight: bold;
+    display: block;
+}
+
+/* Mobile: schede più strette */
+@media (max-width: 480px) {
+    .radio-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* Span interno */
+.radio-card span {
+    display: block;
+    width: 100%;
+}
+
+
+.custom-select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background: #f9f6f2;
+    appearance: none; /* rimuove stile default */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%238c3b2d" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    cursor: pointer;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.custom-select:focus {
+    border-color: #a0563c;
+    box-shadow: 0 0 0 2px rgba(160, 86, 60, 0.2);
+    outline: none;
+}
 
 /* === Sezione Gallery === */
 .gallery-section {
@@ -1216,6 +1297,9 @@ footer a:hover {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
     margin-top: 20px;
+
+    /* Questo evita che le card della stessa riga si allunghino insieme */
+    align-items: start; /* invece di stretch */
 }
 
 
@@ -1286,10 +1370,9 @@ footer a:hover {
 =============================== */
 .options {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 15px;
-    align-items: center;
+    flex-direction: column; /* 🔹 Metti le opzioni una sotto l’altra */
+    gap: 16px;              /* 🔹 Spazio verticale elegante tra le righe */
+    margin: 20px 0;         /* 🔹 Distanza sopra e sotto dal testo */
 }
 
 .options label {
@@ -1322,22 +1405,45 @@ footer a:hover {
 =============================== */
 .color-preview {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
+    flex-direction: column; /* Etichetta sopra, cerchi sotto */
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 18px;
 }
 
 .color-label {
     font-weight: 500;
     color: #444;
+    margin-bottom: 4px;
+}
+
+.color-options {
+    display: flex;
+    flex-direction: row; /* Tutto in orizzontale */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: nowrap; /* Evita di andare a capo */
 }
 
 .color-circle {
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
-    background: #e0c59b; /* colore “Naturale” */
     border: 1px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 8px rgba(168,116,26,0.3);
+    border-color: #a8741a;
+}
+
+.color-circle.active {
+    border: 2px solid #a8741a;
+    box-shadow: 0 0 6px rgba(168,116,26,0.4);
 }
 
 /* ===============================
@@ -1369,7 +1475,7 @@ footer a:hover {
 
 .product-full-desc.active {
     opacity: 1;
-    max-height: 300px;
+    max-height: 300px; /* si adatta alla card specifica */
     padding: 15px;
 }
 
@@ -1386,12 +1492,8 @@ footer a:hover {
 }
 
 .product-full-desc li::before {
-    content: none; /* rimuove l’emoji */
-    position: absolute;
-    left: 0;
-    color: #a8741a;
+    content: none;
 }
-
 /* Pulsante "Dettagli tecnici" */
 .show-more-btn {
     background: none;

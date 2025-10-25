@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ====== NAVBAR / HERO SAFE ======
     const navbar = document.getElementById('navbar');
-    const hero = document.getElementById('hero') || document.querySelector('.hero'); // fallback per pagine categoria
+    const hero = document.getElementById('hero') || document.querySelector('.hero');
     const nav = document.getElementById('nav');
     const menuToggle = document.getElementById('menu-toggle');
 
@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.remove('scrolled');
             }
         } else {
-            // Se non c'è hero (pagine categoria), applica scrolled dopo poco scroll
             if (window.scrollY > 20) {
                 navbar.classList.add('scrolled');
             } else {
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNavbarOnScroll();
     window.addEventListener('scroll', updateNavbarOnScroll);
 
-    // ====== MENU TOGGLE (robusto) ======
+    // ====== MENU TOGGLE ======
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', () => {
             nav.classList.toggle('open');
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
         });
 
-        // Chiudi il menu al click su un link (UX mobile)
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('open');
@@ -46,11 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ====== SCROLL FLUIDO (solo anchor locali "#") ======
+    // ====== SCROLL FLUIDO ======
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href') || '';
-            // Solo se l'anchor è locale (#qualcosa). Per link tipo "index.html#about" non intercettiamo.
             if (href.startsWith('#')) {
                 e.preventDefault();
                 const targetID = href.substring(1);
@@ -62,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ====== AOS (se presente) ======
+    // ====== AOS ======
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true });
     }
 
-    // ====== SWIPER (solo se presente nella pagina) ======
+    // ====== SWIPER ======
     if (typeof Swiper !== 'undefined' && document.querySelector('.mySwiper')) {
         new Swiper('.mySwiper', {
             slidesPerView: 1,
@@ -79,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ====== COOKIE BANNER (solo se presente nella pagina) ======
+    // ====== COOKIE BANNER ======
     const banner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('accept-cookies');
 
@@ -101,13 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ====== FILTRI PRODOTTI (sezione categoria) ======
+    // ====== FILTRI PRODOTTI ======
     const productsGrid = document.getElementById('products-grid');
     if (productsGrid) {
-        const searchInput = document.getElementById('search-input');       // testo libero
-        const sortPrice = document.getElementById('sort-price');           // default | asc | desc
-        const categoryFilter = document.getElementById('filter-category'); // all | candela | set | ...
-        const priceBand = document.getElementById('filter-price');         // all | low | mid | high
+        const searchInput = document.getElementById('search-input');
+        const sortPrice = document.getElementById('sort-price');
+        const categoryFilter = document.getElementById('filter-category');
+        const priceBand = document.getElementById('filter-price');
 
         const getCards = () => Array.from(productsGrid.querySelectorAll('.product-card'));
 
@@ -115,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (band === 'low') return price < 15;
             if (band === 'mid') return price >= 15 && price <= 20;
             if (band === 'high') return price > 20;
-            return true; // 'all'
+            return true;
         }
 
         function applyFilters() {
@@ -147,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return sortPrice.value === 'asc' ? pa - pb : pb - pa;
             });
 
-            // Ri-append solo le card visibili, mantenendo anche quelle nascoste in fondo
             const visible = cards.filter(c => c.style.display !== 'none');
             const hidden = cards.filter(c => c.style.display === 'none');
 
@@ -160,40 +156,27 @@ document.addEventListener('DOMContentLoaded', () => {
             applySort();
         }
 
-        // Event listeners (solo se gli elementi esistono)
         if (searchInput) searchInput.addEventListener('input', updateList);
         if (sortPrice) sortPrice.addEventListener('change', updateList);
         if (categoryFilter) categoryFilter.addEventListener('change', updateList);
         if (priceBand) priceBand.addEventListener('change', updateList);
 
-        // Prima applicazione
         updateList();
     }
 });
 
-
-// LEGGI DI PIù
+// ====== LEGGI DI PIÙ ======
 document.querySelectorAll('.show-more-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const fullDesc = btn.nextElementSibling;
-
-        if (fullDesc.style.maxHeight && fullDesc.style.maxHeight !== '0px') {
-            // Chiudi
-            fullDesc.style.maxHeight = '0';
-            fullDesc.style.opacity = 0;
-            btn.textContent = 'Leggi di più';
-        } else {
-            // Apri
-            fullDesc.style.maxHeight = fullDesc.scrollHeight + 'px';
-            fullDesc.style.opacity = 1;
-            btn.textContent = 'Chiudi';
-        }
+        fullDesc.classList.toggle('active');
+        btn.textContent = fullDesc.classList.contains('active')
+            ? 'Chiudi dettagli'
+            : 'Dettagli tecnici';
     });
 });
 
-
-
-// FORM PRODOTTI
+// ====== FORM TOGGLE ======
 document.querySelectorAll('.toggle-form-btn').forEach(button => {
     button.addEventListener('click', () => {
         const form = button.nextElementSibling;
@@ -204,8 +187,7 @@ document.querySelectorAll('.toggle-form-btn').forEach(button => {
     });
 });
 
-
-// FAQ toggle
+// ====== FAQ toggle ======
 document.querySelectorAll(".faq-question").forEach(btn => {
     btn.addEventListener("click", () => {
         const answer = btn.nextElementSibling;
@@ -220,60 +202,81 @@ document.querySelectorAll(".faq-question").forEach(btn => {
     });
 });
 
-// costo variabile prodotti
 document.addEventListener("DOMContentLoaded", () => {
-    const sizeSelect = document.getElementById("size");
-    const packagingSelect = document.getElementById("packaging");
-    const priceDisplay = document.getElementById("teddy-price");
+    document.querySelectorAll(".product-card").forEach(card => {
+        const sizeSelect = card.querySelector(".size-select");
+        const packagingSelect = card.querySelector(".packaging-select");
+        const priceDisplay = card.querySelector(".price");
+        const form = card.querySelector(".product-form");
+        const sizeHidden = form?.querySelector('input[name="size_selected"]');
+        const packagingHidden = form?.querySelector('input[name="packaging_selected"]');
 
-    const prices = {
-        no: { S: 2.5, M: 4, L: 6.5 },
-        yes: { S: 4.5, M: 6, L: 8.5 }
-    };
+        if (!sizeSelect || !packagingSelect || !priceDisplay) return;
 
-    function updatePrice() {
-        const size = sizeSelect.value;
-        const pack = packagingSelect.value;
-        const price = prices[pack][size];
-        priceDisplay.textContent = `€${price.toFixed(2).replace('.', ',')}`;
-    }
+        // Prezzi dinamici dal dataset
+        const basePriceS = parseFloat(card.dataset.priceS || card.dataset.basePrice || "0");
+        const basePriceM = parseFloat(card.dataset.priceM || card.dataset.basePrice || "0");
+        const basePriceL = parseFloat(card.dataset.priceL || card.dataset.basePrice || "0");
+        const giftExtra = parseFloat(card.dataset.giftExtra || "0");
 
-    sizeSelect.addEventListener("change", updatePrice);
-    packagingSelect.addEventListener("change", updatePrice);
+        function getBasePrice() {
+            switch (sizeSelect.value) {
+                case "M": return basePriceM;
+                case "L": return basePriceL;
+                default: return basePriceS;
+            }
+        }
 
-    updatePrice();
+        function updatePrice() {
+            let price = getBasePrice();
+            if (packagingSelect.value === "yes") price += giftExtra;
+            priceDisplay.textContent = `€${price.toFixed(2).replace(".", ",")}`;
+        }
 
-    // Gestione "Leggi di più"
-    document.querySelectorAll(".show-more-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const desc = btn.nextElementSibling;
-            desc.classList.toggle("active");
-            btn.textContent = desc.classList.contains("active")
-                ? "Nascondi dettagli"
-                : "Dettagli tecnici";
+        function syncFormFields() {
+            if (sizeHidden) sizeHidden.value = sizeSelect.options[sizeSelect.selectedIndex].text;
+            if (packagingHidden) packagingHidden.value = packagingSelect.options[packagingSelect.selectedIndex].text;
+        }
+
+        sizeSelect.addEventListener("change", () => {
+            updatePrice();
+            syncFormFields();
         });
-    });
 
-    // Gestione form a comparsa
-    document.querySelectorAll(".toggle-form-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const form = btn.nextElementSibling;
-            form.classList.toggle("active");
+        packagingSelect.addEventListener("change", () => {
+            updatePrice();
+            syncFormFields();
+        });
+
+        // Avvio iniziale
+        updatePrice();
+        syncFormFields();
+    });
+});
+
+
+// dettagli tecnici
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".show-more-btn").forEach(button => {
+        button.addEventListener("click", () => {
+            const card = button.closest(".product-card");
+            const desc = card.querySelector(".product-full-desc");
+            if (!desc) return;
+
+            const isOpen = desc.classList.contains("open");
+            if (isOpen) {
+                desc.classList.remove("open");
+                button.textContent = "Dettagli tecnici";
+            } else {
+                desc.classList.add("open");
+                button.textContent = "Nascondi dettagli";
+            }
         });
     });
 });
 
 
-
-
-
-
-
-
-
-
-
-// Counter animati
+// ====== COUNTERS ======
 const counters = document.querySelectorAll('.counter');
 let countersStarted = false;
 
@@ -297,6 +300,7 @@ function animateCounters() {
 
 window.addEventListener('scroll', () => {
     const section = document.querySelector('#counters');
+    if (!section) return;
     const sectionPos = section.getBoundingClientRect().top;
     const screenPos = window.innerHeight;
     if (sectionPos < screenPos && !countersStarted) {

@@ -59,35 +59,219 @@
   <h2>I nostri prodotti</h2>
   <div class="products-grid" id="products-grid">
 
-    <div id="product-flower-rosa" class="product-card" data-price="12" data-category="bomboniera">
-      <img src="https://example.com/bomboniera-rosa.jpg" alt="Bomboniera rosa a tema fiore">
+
+    <!-- Card - Peonie -->
+    <div class="product-card">
+
+      <img src="peonie.jpeg" alt="Peonie" class="product-image">
+
       <div class="product-info">
-        <h3>Bomboniera Rosa</h3>
-        <p>Elegante bomboniera rosa con dettagli floreali, perfetta per battesimi e matrimoni.</p>
-        <span class="price">€12</span>
-        <a href="index.html#contact" class="btn">Richiedi info</a>
+        <h3>Peonie</h3>
+        <p>Delicata candela a forma di peonia, realizzata artigianalmente in cera naturale. Perfetta come decorazione elegante o idea regalo raffinata.</p>
+
+        <!-- Selettori opzioni -->
+        <div class="options">
+          <label for="size">Taglia:</label>
+          <select id="size" class="option-select">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+          </select>
+
+          <label for="packaging">Confezione regalo:</label>
+          <select id="packaging" class="option-select">
+            <option value="no">Senza confezione</option>
+            <option value="yes">Con confezione regalo</option>
+          </select>
+        </div>
+
+        <!-- Colorazioni -->
+        <div class="color-preview">
+          <span class="color-label">Colorazione:</span>
+          <div class="color-options">
+            <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
+          </div>
+        </div>
+
+        <!-- Prezzo dinamico -->
+        <span class="price" id="teddy-price">€2,00</span>
+
+        <!-- Dettagli tecnici -->
+        <button class="show-more-btn">Dettagli tecnici</button>
+        <div class="product-full-desc">
+          <ul>
+            <li><strong>Colorazione:</strong> Naturale</li>
+            <li><strong>Taglia S:</strong> h 2×4,5 cm — 20 g</li>
+            <li><strong>Taglia M:</strong> h 3×5,5 cm — 35 g</li>
+            <li><strong>Taglia L:</strong> h 3,5×7,5 cm — 60 g</li>
+          </ul>
+        </div>
+
+        <!-- Bottone che apre il form -->
+        <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+
+        <!-- Form preventivo -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+          <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+          <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+          <input type="hidden" name="product" value="Peonie">
+
+          <input type="text" name="name" placeholder="Il tuo nome" required>
+          <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+          <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+
+          <button type="submit" class="btn">Invia Richiesta</button>
+        </form>
       </div>
     </div>
 
-    <div id="product-flower-bianco" class="product-card" data-price="14" data-category="bomboniera">
-      <img src="https://example.com/bomboniera-bianca.jpg" alt="Bomboniera bianca a tema fiore">
+    <!-- Card - Rose -->
+    <div class="product-card"
+         data-price-s="2.00"
+         data-price-m="3.50"
+         data-price-l="5.00"
+         data-gift-extra="1.00">
+
+      <img src="rose.jpeg" alt="Rose" class="product-image">
+
       <div class="product-info">
-        <h3>Bomboniera Bianca</h3>
-        <p>Bomboniera bianca con decorazioni floreali delicate, ideale per ogni cerimonia.</p>
-        <span class="price">€14</span>
-        <a href="index.html#contact" class="btn">Richiedi info</a>
+        <h3>Rose</h3>
+        <p>Elegante candela a forma di rosa, realizzata artigianalmente in cera naturale. Perfetta come idea regalo o come raffinato elemento decorativo.</p>
+
+        <!-- Selettori opzioni -->
+        <div class="options">
+          <label for="size-rose">Taglia:</label>
+          <select id="size-rose" class="option-select size-select">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+          </select>
+
+          <label for="packaging-rose">Confezione regalo:</label>
+          <select id="packaging-rose" class="option-select packaging-select">
+            <option value="no">Senza confezione</option>
+            <option value="yes">Con confezione regalo (+€1,00)</option>
+          </select>
+        </div>
+
+        <!-- Colorazioni -->
+        <div class="color-preview">
+          <span class="color-label">Colorazioni:</span>
+          <div class="color-options">
+            <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
+            <div class="color-circle" style="background:#f4b6c2;" title="Rosa"></div>
+            <div class="color-circle" style="background:#a8d0e6;" title="Azzurro"></div>
+            <div class="color-circle" style="background:#d45252;" title="Rosso"></div>
+          </div>
+        </div>
+
+        <!-- Prezzo dinamico -->
+        <span class="price">€2,00</span>
+
+        <!-- Dettagli tecnici -->
+        <button class="show-more-btn">Dettagli tecnici</button>
+        <div class="product-full-desc">
+          <ul>
+            <li><strong>Colorazioni:</strong> Naturale, Rosa, Azzurro, Rosso</li>
+            <li><strong>Taglia S:</strong> h 3×4 cm — 20 g</li>
+            <li><strong>Taglia M:</strong> h 4×6 cm — 55 g</li>
+            <li><strong>Taglia L:</strong> h 5×7,5 cm — 110 g</li>
+          </ul>
+        </div>
+
+        <!-- Bottone che apre il form -->
+        <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+
+        <!-- Form preventivo -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+          <input type="hidden" name="access_key" value="693f3d01-1add-44f1-a79e-3ebff85f72cd">
+          <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+          <input type="hidden" name="product" value="Rose">
+
+          <!-- Hidden dinamici -->
+          <input type="hidden" name="size_selected">
+          <input type="hidden" name="packaging_selected">
+
+          <input type="text" name="name" placeholder="Il tuo nome" required>
+          <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+          <textarea name="message" placeholder="Messaggio o richieste aggiuntive: Indicare colore" rows="3"></textarea>
+
+          <button type="submit" class="btn">Invia Richiesta</button>
+        </form>
       </div>
     </div>
 
-    <div id="product-flower-set" class="product-card" data-price="30" data-category="set">
-      <img src="https://example.com/set-bomboniere.jpg" alt="Set bomboniere floreali">
+
+
+
+    <!-- CARD PRODOTTO GENERICA -->
+    <div class="product-card" data-base-price="2.00" data-gift-extra="1.00">
+      <img src="margherite.jpeg" alt="Margherite" class="product-image">
+
       <div class="product-info">
-        <h3>Set Bomboniere Flowers</h3>
-        <p>Set di bomboniere floreali assortite, perfetto per eventi e regali coordinati.</p>
-        <span class="price">€30</span>
-        <a href="index.html#contact" class="btn">Richiedi info</a>
+        <h3>Margherite</h3>
+        <p>
+          Candela artigianale a forma di margherita, delicata e raffinata,
+          realizzata in cera naturale. Ideale come regalo o decorazione elegante.
+        </p>
+
+        <!-- SELETTORI -->
+        <div class="options">
+          <label>Taglia:</label>
+          <select class="option-select size-select">
+            <option value="U">Unica</option>
+          </select>
+
+          <label>Confezione regalo:</label>
+          <select class="option-select packaging-select">
+            <option value="no">Senza confezione</option>
+            <option value="yes">Con confezione regalo (+€1,00)</option>
+          </select>
+        </div>
+
+        <!-- PREZZO -->
+        <span class="price">€2,00</span>
+
+        <!-- DETTAGLI TECNICI -->
+        <button class="show-more-btn">Dettagli tecnici</button>
+        <div class="product-full-desc">
+          <ul>
+            <li><strong>Colorazioni:</strong> Naturale, Rosa, Azzurro, Lilla</li>
+            <li><strong>Taglia unica:</strong> 6×6 cm — 18 g</li>
+          </ul>
+        </div>
+
+        <!-- BOTTONE FORM -->
+        <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+
+        <!-- FORM -->
+        <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="product-form"
+        >
+          <input type="hidden" name="access_key" value="693f3d01-1add-44f1-a79e-3ebff85f72cd" />
+          <input type="hidden" name="to" value="beautyequipment.na@gmail.com" />
+          <input type="hidden" name="product" value="Margherite" />
+
+          <!-- CAMPI NASCOSTI DINAMICI -->
+          <input type="hidden" name="size_selected" />
+          <input type="hidden" name="packaging_selected" />
+
+          <!-- CAMPI VISIBILI -->
+          <input type="text" name="name" placeholder="Il tuo nome" required />
+          <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}" />
+          <textarea
+                  name="message"
+                  placeholder="Messaggio o richieste aggiuntive"
+                  rows="3"
+          ></textarea>
+
+          <button type="submit" class="btn">Invia Richiesta</button>
+        </form>
       </div>
     </div>
+
 
   </div>
 </section>

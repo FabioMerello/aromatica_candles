@@ -177,7 +177,16 @@
             <p>Eleganti confezioni per racchiudere dolcezza e stile in ogni celebrazione.</p>
         </div>
     </a>
+
 </section>
+
+<!-- Flowers -->
+<div class="catalogo-block" style="background-image: url('laurea.jpeg');">
+    <div class="evento-overlay">
+        <h3>FLOWERS</h3>
+        <p>STUPENDE CANDELE FLOREALI IDEALI PER OGNI OCCASIONE</p>
+    </div>
+</div>
 
 
 <!-- Eventi -->
@@ -217,17 +226,169 @@
         </div>
     </div>
 
-    <!-- Form eventi -->
+
     <div class="eventi-form-wrapper">
-        <h3>Richiedi informazioni per il tuo evento</h3>
-        <form class="eventi-form">
-            <input type="text" name="nome" placeholder="Il tuo nome" required>
-            <input type="email" name="email" placeholder="La tua email" required>
-            <input type="text" name="evento" placeholder="Tipo di evento (es. matrimonio, battesimo)" required>
-            <textarea name="messaggio" rows="4" placeholder="Scrivi qui la tua richiesta" required></textarea>
+        <h3>MODULO EVENTI</h3>
+        <p>
+            Ciao, questo è il modulo eventi, un elenco di domande alla quale rispondere per fornirmi tutti i dettagli.
+            Ti chiedo di compilarlo nel modo più dettagliato possibile cosi potrò dedicarmi al tuo ordine senza rischiare di tralasciare nulla!
+            I prezzi "con confezione" sono comprensivi di tutto: Scatola, Tulle di riempimento, Nastri in raso, 5 confetti del colore scelto, Targhetta personalizzata.
+            Per idee sul confezionamento puoi anche consultare la mia pagina Instagram ed inviarmi la foto su WhatsApp.<br><br>
+            <strong>Nota importante:</strong> la compilazione del modulo non garantisce automaticamente la prenotazione,
+            attendi sempre una conferma da parte mia.
+        </p>
+
+        <form
+                class="eventi-form"
+                method="POST"
+                action="https://api.web3forms.com/submit"
+        >
+            <input type="hidden" name="access_key" value="693f3d01-1add-44f1-a79e-3ebff85f72cd" />
+            <input type="hidden" name="email_to" value="merefabio05@gmail.com" />
+
+            <!-- Dettagli Evento -->
+            <h4>Dettagli Evento</h4>
+            <label>Data evento</label>
+            <input type="date" name="data_evento" required />
+
+            <label>Tipologia evento</label>
+            <input
+                    type="text"
+                    name="tipo_evento"
+                    placeholder="Matrimonio, Battesimo, Laurea..."
+                    required
+            />
+
+            <label>Bomboniera scelta + taglia</label>
+            <input
+                    type="text"
+                    name="bomboniera"
+                    placeholder="Esempio: Romeo M"
+                    required
+            />
+
+            <label>Quantità di prodotti</label>
+            <input
+                    type="number"
+                    name="quantita"
+                    placeholder="Esempio: 40 pezzi"
+                    required
+            />
+
+            <label>Colore bomboniera</label>
+            <select name="colore_bomboniera" class="custom-select" required>
+                <option value="" disabled selected>Seleziona un colore</option>
+                <option>Rosa</option>
+                <option>Azzurro</option>
+                <option>Lilla</option>
+                <option>Verde salvia</option>
+            </select>
+
+            <label>Colore nastro (in raso)</label>
+            <select name="nastro_raso" class="custom-select">
+                <option value="" disabled selected>Seleziona un colore</option>
+                <option>Rosa</option>
+                <option>Rosa cipolla</option>
+                <option>Azzurro</option>
+                <option>Lilla</option>
+            </select>
+
+            <label>Colore nastro (in chiffon, +0,50€)</label>
+            <select name="nastro_chiffon" class="custom-select">
+                <option value="" disabled selected>Seleziona un colore</option>
+                <option>Rosa</option>
+                <option>Azzurro</option>
+                <option>Rosso</option>
+                <option>Verde salvia</option>
+            </select>
+
+            <label>Colore confetti (a mandorla)</label>
+            <select name="confetti" class="custom-select">
+                <option value="" disabled selected>Seleziona un colore</option>
+                <option>Bianco</option>
+                <option>Rosa</option>
+                <option>Azzurro</option>
+                <option>Rosso</option>
+                <option>Verde salvia</option>
+                <option>Lilla</option>
+                <option>Argento</option>
+            </select>
+
+            <label>Vuoi la confezione evento?</label>
+            <select name="confezione_evento" class="custom-select">
+                <option value="" disabled selected>Seleziona</option>
+                <option>Sì</option>
+                <option>No</option>
+            </select>
+
+            <label>Se sì, quale preferisci?</label>
+            <select name="tipo_confezione" class="custom-select">
+                <option value="" disabled selected>Seleziona</option>
+                <option>Fibra bianca</option>
+                <option>Avana</option>
+                <option>Plex</option>
+            </select>
+
+            <textarea
+                    name="tag"
+                    rows="3"
+                    placeholder="Cosa scriviamo nel tag? E che immagine vorresti? (es. Il battesimo di Luca / orsetto, mongolfiera...)"
+            ></textarea>
+
+            <!-- Dati Personali -->
+            <h4>Dati Personali</h4>
+            <input type="text" name="nome_cliente" placeholder="Nome" required />
+            <input type="text" name="cognome_cliente" placeholder="Cognome" required />
+            <input
+                    type="tel"
+                    name="telefono"
+                    placeholder="Numero di cellulare"
+                    required
+            />
+            <input
+                    type="email"
+                    name="email_cliente"
+                    placeholder="Email"
+                    required
+            />
+            <textarea
+                    name="richieste"
+                    rows="3"
+                    placeholder="Hai richieste particolari? Scrivile qui!"
+            ></textarea>
+
+            <!-- Spedizione -->
+            <label>Spedizione</label>
+            <select name="spedizione" class="custom-select" required>
+                <option value="" disabled selected>Seleziona</option>
+                <option>Spediscimi l’ordine</option>
+                <option>Ritiro in loco</option>
+            </select>
+
             <button type="submit">Invia richiesta</button>
         </form>
+
+        <!-- NOTE SPEDIZIONI -->
+        <div style="margin-top: 30px; font-size: 0.95rem; color: #5a4632">
+            <strong>NOTE SPEDIZIONI -</strong><br />
+            La spedizione ha un costo di 10,00€.<br />
+            L'ordine arriverà entro 24/48h dalla partenza e generalmente spedisco 2
+            settimane prima della data evento.<br />
+            <strong>RITIRO IN LOCO</strong> - In laboratorio sito a
+            Castel Volturno (CE) previo appuntamento (non avrai costi di
+            spedizione).<br /><br />
+
+            <strong>NOTE FINALI - LEGGERE ATTENTAMENTE</strong><br />
+            Per bloccare la data, è necessario versare un acconto pari al 50% del
+            preventivo al momento dell’accettazione, tramite Postepay o bonifico.
+            Questo importo sarà detratto dal saldo finale. Una volta completato il
+            lavoro, ti contatteremo via WhatsApp per informarti e richiedere il saldo,
+            a cui seguirà la spedizione. I dati per il pagamento dell’acconto ti
+            saranno forniti al momento dell'accettazione dell'evento.
+        </div>
     </div>
+
+
 </section>
 
 <!-- Counter animati -->
