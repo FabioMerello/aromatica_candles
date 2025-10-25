@@ -191,7 +191,7 @@
                 action="https://api.web3forms.com/submit"
         >
             <input type="hidden" name="access_key" value="693f3d01-1add-44f1-a79e-3ebff85f72cd" />
-            <input type="hidden" name="email_to" value="merefabio05@gmail.com" />
+            <input type="hidden" name="email_to" value="91ritarusciano@gmail.com" />
 
             <!-- Dettagli Evento -->
             <h4>Dettagli Evento</h4>
@@ -448,17 +448,27 @@
     <p class="cta-intro">Vuoi ordinare le nostre candele artigianali o richiedere un preventivo personalizzato? Compila il form e ti risponderemo al più presto!</p>
 
     <div class="contact-container">
-        <form class="contact-form" data-aos="fade-up" data-aos-delay="200">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Web3Forms hidden fields -->
+            <input type="hidden" name="access_key" value="693f3d01-1add-44f1-a79e-3ebff85f72cd">
+            <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+
+            <!-- User fields -->
             <input type="text" name="name" placeholder="Il tuo nome" required>
             <input type="email" name="email" placeholder="La tua email" required>
             <input type="tel" name="phone" placeholder="Numero di telefono" required>
             <input type="text" name="product" placeholder="Prodotto o richiesta" required>
             <textarea name="message" rows="4" placeholder="Scrivi qui la tua richiesta o domanda" required></textarea>
+
+            <!-- Privacy -->
             <label class="privacy-consent">
                 <input type="checkbox" name="privacy" required>
                 Acconsento al trattamento dei miei dati personali ai sensi della
                 <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
             </label>
+
+            <!-- Submit -->
             <button type="submit">Invia richiesta</button>
         </form>
 
