@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collezione Laurea – Aromantica Candles</title>
+    <title>Collezione Porta Confetti – Aromantica Candles</title>
     <link rel="icon" href="Aromantica.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+
+    </style>
 </head>
 <body>
 
@@ -26,8 +29,8 @@
 <section class="hero hero-small">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
-        <h1>Collezione Laurea</h1>
-        <p>Bomboniere e gadget eleganti per festeggiare la laurea con stile</p>
+        <h1>Collezione Porta Confetti</h1>
+        <p>Eleganti Porta Confetti personalizzati per ogni occasione</p>
     </div>
 </section>
 
@@ -42,16 +45,15 @@
 
     <select id="filter-category">
         <option value="all">Tutte le categorie</option>
-        <option value="bomboniera">Bomboniere</option>
-        <option value="gadget">Gadget laurea</option>
-        <option value="set">Set regalo</option>
+        <option value="cartoncino">Cartoncini</option>
+        <option value="set">Set</option>
     </select>
 
     <select id="filter-price">
         <option value="all">Tutti i prezzi</option>
         <option value="low">Meno di €15</option>
-        <option value="mid">€15 - €25</option>
-        <option value="high">Più di €25</option>
+        <option value="mid">€15 - €20</option>
+        <option value="high">Più di €20</option>
     </select>
 </div>
 
@@ -60,17 +62,14 @@
     <h2>I nostri prodotti</h2>
     <div class="products-grid" id="products-grid">
 
+        <!-- Card - Abbraccio -->
+        <div class="product-card" data-base-price="5.50" data-gift-extra="2.50">
 
-
-
-        <!-- Card - Dea Bendata -->
-        <div class="product-card" data-base-price="5.00" data-gift-extra="2.00">
-
-            <img src="deabendata.jpeg" alt="Dea Bendata" class="product-image">
+            <img src="abbraccio.jpeg" alt="Abbraccio" class="product-image">
 
             <div class="product-info">
-                <h3>Dea Bendata</h3>
-                <p>Candela artigianale a forma di Dea Bendata, realizzata in cera naturale. Perfetta come regalo simbolico o come decorazione elegante.</p>
+                <h3>Abbraccio</h3>
+                <p>Candela artigianale a forma di Abbraccio, realizzata in cera naturale. Perfetta come regalo simbolico o decorazione elegante.</p>
 
                 <!-- Selettori opzioni -->
                 <div class="options">
@@ -82,7 +81,7 @@
                     <label>Confezione regalo:</label>
                     <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione (+€2,00)</option>
+                        <option value="yes">Con confezione (+€2,50)</option>
                     </select>
                 </div>
 
@@ -95,14 +94,132 @@
                 </div>
 
                 <!-- Prezzo dinamico -->
-                <span class="price">€5,00</span>
+                <span class="price">€5,50</span>
 
                 <!-- Dettagli tecnici -->
                 <button class="show-more-btn">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazione:</strong> Naturale</li>
-                        <li><strong>Taglia Unica:</strong> 8,5×7 cm — 100 g</li>
+                        <li><strong>Taglia Unica:</strong> h 12×6 cm — 100 g</li>
+                    </ul>
+                </div>
+
+                <!-- Bottone form -->
+                <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+                <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+                    <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+                    <input type="hidden" name="product" value="Abbraccio">
+                    <input type="hidden" name="size_selected">
+                    <input type="hidden" name="packaging_selected">
+                    <input type="text" name="name" placeholder="Il tuo nome" required>
+                    <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+                    <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+                    <button type="submit" class="btn">Invia Richiesta</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Card - Bouquet -->
+        <div class="product-card" data-base-price="7.00" data-gift-extra="2.50">
+
+            <img src="bouquet.jpeg" alt="Bouquet" class="product-image">
+
+            <div class="product-info">
+                <h3>Bouquet</h3>
+                <p>Candela artigianale a forma di bouquet, realizzata in cera naturale. Perfetta come regalo elegante o decorazione raffinata.</p>
+
+                <!-- Selettori opzioni -->
+                <div class="options">
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
+                        <option value="U">Unica</option>
+                    </select>
+
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
+                        <option value="no">Senza confezione</option>
+                        <option value="yes">Con confezione (+€2,50)</option>
+                    </select>
+                </div>
+
+                <!-- Colorazioni -->
+                <div class="color-preview">
+                    <span class="color-label">Colorazione:</span>
+                    <div class="color-options">
+                        <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
+                    </div>
+                </div>
+
+                <!-- Prezzo dinamico -->
+                <span class="price">€7,00</span>
+
+                <!-- Dettagli tecnici -->
+                <button class="show-more-btn">Dettagli tecnici</button>
+                <div class="product-full-desc">
+                    <ul>
+                        <li><strong>Colorazione:</strong> Naturale</li>
+                        <li><strong>Taglia Unica:</strong> h 12×7 cm — 210 g</li>
+                    </ul>
+                </div>
+
+                <!-- Bottone form -->
+                <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+                <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+                    <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+                    <input type="hidden" name="product" value="Bouquet">
+                    <input type="hidden" name="size_selected">
+                    <input type="hidden" name="packaging_selected">
+                    <input type="text" name="name" placeholder="Il tuo nome" required>
+                    <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+                    <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+                    <button type="submit" class="btn">Invia Richiesta</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Card - Dea Bendata -->
+        <div class="product-card" data-base-price="4.50" data-gift-extra="2.50">
+
+            <img src="deabendata.jpeg" alt="Dea Bendata" class="product-image">
+
+            <div class="product-info">
+                <h3>Dea Bendata</h3>
+                <p>Candela artigianale a forma di Dea Bendata, realizzata in cera naturale. Perfetta come regalo simbolico o decorazione elegante.</p>
+
+                <!-- Selettori opzioni -->
+                <div class="options">
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
+                        <option value="U">Unica</option>
+                    </select>
+
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
+                        <option value="no">Senza confezione</option>
+                        <option value="yes">Con confezione (+€2,50)</option>
+                    </select>
+                </div>
+
+                <!-- Colorazioni -->
+                <div class="color-preview">
+                    <span class="color-label">Colorazione:</span>
+                    <div class="color-options">
+                        <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
+                    </div>
+                </div>
+
+                <!-- Prezzo dinamico -->
+                <span class="price">€4,50</span>
+
+                <!-- Dettagli tecnici -->
+                <button class="show-more-btn">Dettagli tecnici</button>
+                <div class="product-full-desc">
+                    <ul>
+                        <li><strong>Colorazione:</strong> Naturale</li>
+                        <li><strong>Taglia Unica:</strong> h 8,5×7 cm — 100 g</li>
                     </ul>
                 </div>
 
@@ -122,14 +239,14 @@
             </div>
         </div>
 
-        <!-- Card - Ragazza Laurea -->
-        <div class="product-card" data-base-price="4.50" data-gift-extra="2.00">
+        <!-- Card - Candela Spirale -->
+        <div class="product-card" data-base-price="5.00" data-gift-extra="2.50">
 
-            <img src="ragazzaLaurea.jpeg" alt="Ragazza Laurea" class="product-image">
+            <img src="candela_spirale.jpeg" alt="Candela Spirale" class="product-image">
 
             <div class="product-info">
-                <h3>Ragazza Laurea</h3>
-                <p>Candela artigianale a forma di ragazza per la laurea, realizzata in cera naturale. Perfetta come regalo simbolico o decorazione elegante per l’occasione.</p>
+                <h3>Candela Spirale</h3>
+                <p>Candela artigianale a forma di spirale, realizzata in cera naturale. Perfetta come decorazione elegante o regalo raffinato.</p>
 
                 <!-- Selettori opzioni -->
                 <div class="options">
@@ -141,7 +258,7 @@
                     <label>Confezione regalo:</label>
                     <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione (+€2,00)</option>
+                        <option value="yes">Con confezione (+€2,50)</option>
                     </select>
                 </div>
 
@@ -154,14 +271,14 @@
                 </div>
 
                 <!-- Prezzo dinamico -->
-                <span class="price">€4,50</span>
+                <span class="price">€5,00</span>
 
                 <!-- Dettagli tecnici -->
                 <button class="show-more-btn">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazione:</strong> Naturale</li>
-                        <li><strong>Taglia Unica:</strong> 10×4,5 cm — 60 g</li>
+                        <li><strong>Taglia Unica:</strong> h 7×7 cm — 180 g</li>
                     </ul>
                 </div>
 
@@ -170,7 +287,7 @@
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
                     <input type="hidden" name="to" value="91ritarusciano@gmail.com">
-                    <input type="hidden" name="product" value="Ragazza Laurea">
+                    <input type="hidden" name="product" value="Candela Spirale">
                     <input type="hidden" name="size_selected">
                     <input type="hidden" name="packaging_selected">
                     <input type="text" name="name" placeholder="Il tuo nome" required>
@@ -181,14 +298,14 @@
             </div>
         </div>
 
-        <!-- Card - Ragazzo Laurea -->
-        <div class="product-card" data-base-price="4.50" data-gift-extra="2.00">
+        <!-- Card - Candela Spirale -->
+        <div class="product-card" data-base-price="5.00" data-gift-extra="2.50">
 
-            <img src="ragazzolaurea.jpeg" alt="Ragazzo Laurea" class="product-image">
+            <img src="candela_spirale.jpeg" alt="Candela Spirale" class="product-image">
 
             <div class="product-info">
-                <h3>Ragazzo Laurea</h3>
-                <p>Candela artigianale a forma di ragazzo per la laurea, realizzata in cera naturale. Ideale come regalo simbolico o decorazione elegante per l’occasione.</p>
+                <h3>Candela Spirale</h3>
+                <p>Candela artigianale a forma di spirale, realizzata in cera naturale. Perfetta come decorazione elegante o regalo raffinato.</p>
 
                 <!-- Selettori opzioni -->
                 <div class="options">
@@ -200,7 +317,7 @@
                     <label>Confezione regalo:</label>
                     <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione (+€2,00)</option>
+                        <option value="yes">Con confezione (+€2,50)</option>
                     </select>
                 </div>
 
@@ -213,14 +330,14 @@
                 </div>
 
                 <!-- Prezzo dinamico -->
-                <span class="price">€4,50</span>
+                <span class="price">€5,00</span>
 
                 <!-- Dettagli tecnici -->
                 <button class="show-more-btn">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazione:</strong> Naturale</li>
-                        <li><strong>Taglia Unica:</strong> 10×4 cm — 60 g</li>
+                        <li><strong>Taglia Unica:</strong> h 7×7 cm — 180 g</li>
                     </ul>
                 </div>
 
@@ -229,7 +346,7 @@
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
                     <input type="hidden" name="to" value="91ritarusciano@gmail.com">
-                    <input type="hidden" name="product" value="Ragazzo Laurea">
+                    <input type="hidden" name="product" value="Candela Spirale">
                     <input type="hidden" name="size_selected">
                     <input type="hidden" name="packaging_selected">
                     <input type="text" name="name" placeholder="Il tuo nome" required>
@@ -240,15 +357,14 @@
             </div>
         </div>
 
+        <!-- Card - Cuore Ricamato -->
+        <div class="product-card" data-base-price="2.50" data-gift-extra="2.50">
 
-        <!-- Card - Libri -->
-        <div class="product-card" data-base-price="4.00" data-gift-extra="2.00">
-
-            <img src="libri.jpeg" alt="Libri" class="product-image">
+            <img src="cuore_ricamato.jpeg" alt="Cuore Ricamato" class="product-image">
 
             <div class="product-info">
-                <h3>Libri</h3>
-                <p>Candela artigianale a forma di libri, realizzata in cera naturale. Perfetta come regalo o come decorazione elegante per la casa.</p>
+                <h3>Cuore Ricamato</h3>
+                <p>Candela artigianale a forma di cuore ricamato, realizzata in cera naturale. Perfetta come decorazione delicata o idea regalo romantica.</p>
 
                 <!-- Selettori opzioni -->
                 <div class="options">
@@ -260,7 +376,7 @@
                     <label>Confezione regalo:</label>
                     <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione (+€2,00)</option>
+                        <option value="yes">Con confezione (+€2,50)</option>
                     </select>
                 </div>
 
@@ -273,14 +389,14 @@
                 </div>
 
                 <!-- Prezzo dinamico -->
-                <span class="price">€4,00</span>
+                <span class="price">€2,50</span>
 
                 <!-- Dettagli tecnici -->
                 <button class="show-more-btn">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazione:</strong> Naturale</li>
-                        <li><strong>Taglia Unica:</strong> 7×5 cm — 65/80 g</li>
+                        <li><strong>Taglia Unica:</strong> h 7×7 cm — 55 g</li>
                     </ul>
                 </div>
 
@@ -289,7 +405,7 @@
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
                     <input type="hidden" name="to" value="91ritarusciano@gmail.com">
-                    <input type="hidden" name="product" value="Libri">
+                    <input type="hidden" name="product" value="Cuore Ricamato">
                     <input type="hidden" name="size_selected">
                     <input type="hidden" name="packaging_selected">
                     <input type="text" name="name" placeholder="Il tuo nome" required>
@@ -299,127 +415,6 @@
                 </form>
             </div>
         </div>
-
-        <!-- Card - Gufo piccolo -->
-        <div class="product-card" data-base-price="3.00" data-gift-extra="2.00">
-            <!-- invertito per sbaglio con l'altro gufo -->
-            <img src="gufo_grande.jpeg" alt="Gufo piccolo" class="product-image">
-
-            <div class="product-info">
-                <h3>Gufo piccolo</h3>
-                <p>Candela artigianale a forma di piccolo gufo, realizzata in cera naturale. Perfetta come idea regalo o decorazione originale e delicata.</p>
-
-                <!-- Selettori opzioni -->
-                <div class="options">
-                    <label>Taglia:</label>
-                    <select class="option-select size-select">
-                        <option value="U">Unica</option>
-                    </select>
-
-                    <label>Confezione regalo:</label>
-                    <select class="option-select packaging-select">
-                        <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione (+€2,00)</option>
-                    </select>
-                </div>
-
-                <!-- Colorazioni -->
-                <div class="color-preview">
-                    <span class="color-label">Colorazione:</span>
-                    <div class="color-options">
-                        <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
-                    </div>
-                </div>
-
-                <!-- Prezzo dinamico -->
-                <span class="price">€3,00</span>
-
-                <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
-                <div class="product-full-desc">
-                    <ul>
-                        <li><strong>Colorazione:</strong> Naturale</li>
-                        <li><strong>Taglia Unica:</strong> 5×4 cm — 40 g</li>
-                    </ul>
-                </div>
-
-                <!-- Bottone form -->
-                <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
-                <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
-                    <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
-                    <input type="hidden" name="product" value="Gufo piccolo">
-                    <input type="hidden" name="size_selected">
-                    <input type="hidden" name="packaging_selected">
-                    <input type="text" name="name" placeholder="Il tuo nome" required>
-                    <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
-                    <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
-                    <button type="submit" class="btn">Invia Richiesta</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Card - Gufo grande -->
-        <div class="product-card" data-base-price="4.00" data-gift-extra="2.00">
-            <!-- invertito per sbaglio con l'altro gufo -->
-            <img src="gufo_piccolo.jpeg" alt="Gufo grande" class="product-image">
-
-            <div class="product-info">
-                <h3>Gufo grande</h3>
-                <p>Candela artigianale a forma di gufo grande, realizzata in cera naturale. Ideale come regalo o decorazione originale e raffinata.</p>
-
-                <!-- Selettori opzioni -->
-                <div class="options">
-                    <label>Taglia:</label>
-                    <select class="option-select size-select">
-                        <option value="U">Unica</option>
-                    </select>
-
-                    <label>Confezione regalo:</label>
-                    <select class="option-select packaging-select">
-                        <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione (+€2,00)</option>
-                    </select>
-                </div>
-
-                <!-- Colorazioni -->
-                <div class="color-preview">
-                    <span class="color-label">Colorazione:</span>
-                    <div class="color-options">
-                        <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
-                    </div>
-                </div>
-
-                <!-- Prezzo dinamico -->
-                <span class="price">€4,00</span>
-
-                <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
-                <div class="product-full-desc">
-                    <ul>
-                        <li><strong>Colorazione:</strong> Naturale</li>
-                        <li><strong>Taglia Unica:</strong> 8×5,5 cm — 75 g</li>
-                    </ul>
-                </div>
-
-                <!-- Bottone form -->
-                <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
-                <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
-                    <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
-                    <input type="hidden" name="product" value="Gufo grande">
-                    <input type="hidden" name="size_selected">
-                    <input type="hidden" name="packaging_selected">
-                    <input type="text" name="name" placeholder="Il tuo nome" required>
-                    <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
-                    <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
-                    <button type="submit" class="btn">Invia Richiesta</button>
-                </form>
-            </div>
-        </div>
-
-
-
 
 
     </div>
@@ -430,7 +425,7 @@
     <p>&copy; 2025 Aromantica Candles – Tutti i diritti riservati</p>
     <p>
         <a href="tel:+393331112223"> +39 333 111 2223</a> |
-         |
+
         <a href="privacy.html">Privacy Policy</a>
     </p>
 </footer>
@@ -439,6 +434,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 800, once: true });
+
 </script>
 </body>
 </html>

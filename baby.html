@@ -126,7 +126,7 @@
                 <!-- FORM (Web3Forms) -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
                     <input type="hidden" name="product" value="Teddy">
 
                     <!-- hidden dinamici sincronizzati dal JS -->
@@ -145,7 +145,12 @@
 
 
         <!-- Card - Romeo -->
-        <div class="product-card">
+        <div class="product-card"
+             data-price-s="4.00"
+             data-price-m="6.50"
+             data-price-l="10.50"
+             data-price-xl="14.00"
+             data-gift-extra="2.00">
 
             <img src="romeo.jpeg" alt="Romeo" class="product-image">
 
@@ -153,24 +158,24 @@
                 <h3>Romeo</h3>
                 <p>Elegante candela artigianale in cera naturale, realizzata con cura nei minimi dettagli. Perfetta per decorare ambienti raffinati o come idea regalo unica.</p>
 
-                <!-- Selettori opzioni -->
+                <!-- SELETTORI -->
                 <div class="options">
-                    <label for="romeo-size">Taglia:</label>
-                    <select id="romeo-size" class="option-select">
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                         <option value="XL">XL</option>
                     </select>
 
-                    <label for="romeo-packaging">Confezione Regalo:</label>
-                    <select id="romeo-packaging" class="option-select">
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione</option>
+                        <option value="yes">Con confezione (+€2,00)</option>
                     </select>
 
-                    <label for="romeo-bow">Fiocchetto:</label>
-                    <select id="romeo-bow" class="option-select">
+                    <label>Fiocchetto:</label>
+                    <select class="option-select bow-select">
                         <option value="none">Senza fiocco</option>
                         <option value="white">Fiocco bianco</option>
                         <option value="gold">Fiocco dorato</option>
@@ -178,27 +183,29 @@
                     </select>
                 </div>
 
-                <!-- Colorazioni -->
-                <div class="color-preview">
-                    <span class="color-label">Colorazione:</span>
-                    <div class="color-options">
-                        <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
-                        <div class="color-circle" style="background:#f4c2c2;" title="Rosa"></div>
-                        <div class="color-circle" style="background:#a7c7e7;" title="Azzurro"></div>
-                        <div class="color-circle" style="background:#c5e1a5;" title="Verde menta"></div>
-                        <div class="color-circle" style="background:#d2b48c;" title="Beige/Marroncino"></div>
-                        <div class="color-circle" style="background:#c8a2c8;" title="Lilla"></div>
+                <!-- COLORI SULLA STESSA RIGA -->
+                <div class="color-preview" style="margin-top:12px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span class="color-label">Colorazioni disponibili:</span>
+                    <div class="color-options" style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                        <div class="color-circle" style="background:#e0c59b; width:22px; height:22px; border-radius:50%;" title="Naturale"></div>
+                        <div class="color-circle" style="background:#f4c2c2; width:22px; height:22px; border-radius:50%;" title="Rosa"></div>
+                        <div class="color-circle" style="background:#a7c7e7; width:22px; height:22px; border-radius:50%;" title="Azzurro"></div>
+                        <div class="color-circle" style="background:#c5e1a5; width:22px; height:22px; border-radius:50%;" title="Verde menta"></div>
+                        <div class="color-circle" style="background:#d2b48c; width:22px; height:22px; border-radius:50%;" title="Beige/Marroncino"></div>
+                        <div class="color-circle" style="background:#c8a2c8; width:22px; height:22px; border-radius:50%;" title="Lilla"></div>
                     </div>
                 </div>
 
-                <!-- Prezzo dinamico -->
-                <span class="price" id="romeo-price">€4,00</span>
+                <!-- PREZZO -->
+                <div style="margin-top:10px;">
+                    <span class="price">€4,00</span>
+                </div>
 
-                <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
+                <!-- DETTAGLI TECNICI -->
+                <button class="show-more-btn" type="button">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
-                        <li><strong>Colorazioni disponibili:</strong> Naturale, Rosa, Azzurro, Verde menta, Beige/marroncino, Lilla</li>
+                        <li><strong>Colorazioni disponibili:</strong> Naturale, Rosa, Azzurro, Verde menta, Beige/Marroncino, Lilla</li>
                         <li><strong>Taglia S:</strong> h 6,5×4,5 cm — 55 g</li>
                         <li><strong>Taglia M:</strong> h 9×6,5 cm — 140 g</li>
                         <li><strong>Taglia L:</strong> h 10×8 cm — 275 g</li>
@@ -206,14 +213,19 @@
                     </ul>
                 </div>
 
-                <!-- Bottone che apre il form -->
+                <!-- BOTTONE FORM -->
                 <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
 
-                <!-- Form preventivo -->
+                <!-- FORM -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
                     <input type="hidden" name="product" value="Romeo">
+
+                    <!-- Hidden dinamici -->
+                    <input type="hidden" name="size_selected">
+                    <input type="hidden" name="packaging_selected">
+                    <input type="hidden" name="bow_selected">
 
                     <input type="text" name="name" placeholder="Il tuo nome" required>
                     <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
@@ -225,7 +237,9 @@
         </div>
 
         <!-- Card - Pablo -->
-        <div class="product-card">
+        <div class="product-card"
+             data-price-s="10.00"
+             data-gift-extra="2.00">
 
             <img src="pablo.jpeg" alt="Pablo" class="product-image">
 
@@ -233,37 +247,39 @@
                 <h3>Pablo</h3>
                 <p>Raffinata candela artigianale in cera naturale con delicato nastro e cuoricino. Realizzata interamente a mano, ideale come bomboniera o dono speciale.</p>
 
-                <!-- Selettori opzioni -->
+                <!-- SELETTORI -->
                 <div class="options">
-                    <label for="pablo-size">Taglia:</label>
-                    <select id="pablo-size" class="option-select">
-                        <option value="U">Unica</option>
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
+                        <option value="S">Unica</option>
                     </select>
 
-                    <label for="pablo-packaging">Confezione Regalo:</label>
-                    <select id="pablo-packaging" class="option-select">
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione</option>
+                        <option value="yes">Con confezione (+€2,00)</option>
                     </select>
 
-                    <label for="pablo-bow">Colore nastro + cuoricino:</label>
-                    <select id="pablo-bow" class="option-select">
+                    <label>Colore nastro + cuoricino:</label>
+                    <select class="option-select bow-select">
                         <option value="rosa">Rosa</option>
                         <option value="azzurro">Azzurro</option>
                     </select>
                 </div>
 
-                <!-- Colorazione -->
-                <div class="color-preview">
+                <!-- COLORI -->
+                <div class="color-preview" style="margin-top:12px; display:flex; align-items:center; gap:8px;">
                     <span class="color-label">Colorazione candela:</span>
-                    <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
+                    <div class="color-circle" style="background:#e0c59b; width:22px; height:22px; border-radius:50%;" title="Naturale"></div>
                 </div>
 
-                <!-- Prezzo dinamico -->
-                <span class="price" id="pablo-price">€10,00</span>
+                <!-- PREZZO -->
+                <div style="margin-top:10px;">
+                    <span class="price">€10,00</span>
+                </div>
 
-                <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
+                <!-- DETTAGLI TECNICI -->
+                <button class="show-more-btn" type="button">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazione candela:</strong> Naturale</li>
@@ -273,13 +289,11 @@
                     </ul>
                 </div>
 
-                <!-- Bottone che apre il form -->
+                <!-- FORM -->
                 <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
-
-                <!-- Form preventivo -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
                     <input type="hidden" name="product" value="Pablo">
 
                     <input type="text" name="name" placeholder="Il tuo nome" required>
@@ -292,7 +306,9 @@
         </div>
 
         <!-- Card - Bear Heart -->
-        <div class="product-card">
+        <div class="product-card"
+             data-price-s="4.50"
+             data-gift-extra="2.00">
 
             <img src="bearheart.jpeg" alt="Bear Heart" class="product-image">
 
@@ -300,24 +316,28 @@
                 <h3>Bear Heart</h3>
                 <p>Dolcissima candela a forma di orsetto con cuore, realizzata artigianalmente in cera naturale. Un’idea regalo tenera e raffinata per ogni occasione.</p>
 
-                <!-- Selettori opzioni -->
                 <div class="options">
-                    <label for="size-bearheart">Taglia:</label>
-                    <select id="size-bearheart" class="option-select">
-                        <option value="U">Unica</option>
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
+                        <option value="S">Unica</option>
                     </select>
 
-                    <label for="packaging-bearheart">Confezione Regalo:</label>
-                    <select id="packaging-bearheart" class="option-select">
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione</option>
+                        <option value="yes">Con confezione (+€2,00)</option>
+                    </select>
+
+                    <label>Colore nastro + cuoricino:</label>
+                    <select class="option-select bow-select">
+                        <option value="rosa">Rosa</option>
+                        <option value="azzurro">Azzurro</option>
                     </select>
                 </div>
 
-                <!-- Colorazioni -->
-                <div class="color-preview">
-                    <span class="color-label">Colorazione:</span>
-                    <div class="color-options">
+                <div class="color-preview" style="margin-top:12px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span class="color-label">Colorazione candela:</span>
+                    <div class="color-options" style="display:flex; gap:8px; flex-wrap:wrap;">
                         <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
                         <div class="color-circle" style="background:#f4c2c2;" title="Rosa"></div>
                         <div class="color-circle" style="background:#a7c7e7;" title="Azzurro"></div>
@@ -327,25 +347,25 @@
                     </div>
                 </div>
 
-                <!-- Prezzo dinamico -->
-                <span class="price" id="bearheart-price">€4,50</span>
+                <div style="margin-top:10px;">
+                    <span class="price">€4,50</span>
+                </div>
 
-                <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
+                <button class="show-more-btn" type="button">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
-                        <li><strong>Colorazioni:</strong> Naturale, Rosa, Azzurro, Verde menta, Beige/Marroncino, Lilla</li>
+                        <li><strong>Colorazioni:</strong> Naturale, Rosa, Azzurro, Verde menta, Beige/marroncino, Lilla</li>
                         <li><strong>Taglia unica:</strong> h 7,5×7,5 cm — 115 g</li>
+                        <li><strong>Colore nastro + cuoricino:</strong> Rosa o Azzurro</li>
+                        <li><strong>Dimensioni:</strong> h 9×9 cm</li>
+                        <li><strong>Peso:</strong> 130 g</li>
                     </ul>
                 </div>
 
-                <!-- Bottone che apre il form -->
                 <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
-
-                <!-- Form preventivo -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
                     <input type="hidden" name="product" value="Bear Heart">
 
                     <input type="text" name="name" placeholder="Il tuo nome" required>
@@ -358,7 +378,11 @@
         </div>
 
         <!-- Card - Carillon -->
-        <div class="product-card">
+        <div class="product-card"
+             data-price-a="10.00"
+             data-price-b="5.50"
+             data-price-c="2.50"
+             data-gift-extra="2.00">
 
             <img src="carillon.jpeg" alt="Carillon" class="product-image">
 
@@ -366,35 +390,35 @@
                 <h3>Carillon</h3>
                 <p>Elegante candela a forma di carillon, realizzata artigianalmente in cera naturale. Un pezzo unico che unisce delicatezza e design romantico.</p>
 
-                <!-- Selettori opzioni -->
+                <!-- SELETTORI -->
                 <div class="options">
-                    <label for="size-carillon">Taglia:</label>
-                    <select id="size-carillon" class="option-select">
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="C">C</option>
                     </select>
 
-                    <label for="packaging-carillon">Confezione regalo:</label>
-                    <select id="packaging-carillon" class="option-select">
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione regalo</option>
+                        <option value="yes">Con confezione (+€2,00)</option>
                     </select>
                 </div>
 
-                <!-- Colorazioni -->
-                <div class="color-preview">
+                <!-- COLORAZIONI -->
+                <div class="color-preview" style="margin-top:12px; display:flex; align-items:center; gap:8px;">
                     <span class="color-label">Colorazione:</span>
-                    <div class="color-options">
-                        <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
-                    </div>
+                    <div class="color-circle" style="background:#e0c59b; width:22px; height:22px; border-radius:50%;" title="Naturale"></div>
                 </div>
 
-                <!-- Prezzo dinamico -->
-                <span class="price" id="carillon-price">€10,00</span>
+                <!-- PREZZO -->
+                <div style="margin-top:10px;">
+                    <span class="price">€10,00</span>
+                </div>
 
-                <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
+                <!-- DETTAGLI TECNICI -->
+                <button class="show-more-btn" type="button">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazione:</strong> Naturale</li>
@@ -404,14 +428,16 @@
                     </ul>
                 </div>
 
-                <!-- Bottone che apre il form -->
+                <!-- FORM -->
                 <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
-
-                <!-- Form preventivo -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
                     <input type="hidden" name="product" value="Carillon">
+
+                    <!-- hidden dinamici sincronizzati dal JS -->
+                    <input type="hidden" name="size_selected">
+                    <input type="hidden" name="packaging_selected">
 
                     <input type="text" name="name" placeholder="Il tuo nome" required>
                     <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
@@ -423,7 +449,9 @@
         </div>
 
         <!-- Card - Arcobaleno -->
-        <div class="product-card">
+        <div class="product-card"
+             data-price-u="5.50"
+             data-gift-extra="2.00">
 
             <img src="arcobaleno.jpeg" alt="Arcobaleno" class="product-image">
 
@@ -433,15 +461,15 @@
 
                 <!-- Selettori opzioni -->
                 <div class="options">
-                    <label for="size-arcobaleno">Taglia:</label>
-                    <select id="size-arcobaleno" class="option-select">
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
                         <option value="U">Unica</option>
                     </select>
 
-                    <label for="packaging-arcobaleno">Confezione regalo:</label>
-                    <select id="packaging-arcobaleno" class="option-select">
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione regalo</option>
+                        <option value="yes">Con confezione (+€2,00)</option>
                     </select>
                 </div>
 
@@ -456,10 +484,10 @@
                 </div>
 
                 <!-- Prezzo dinamico -->
-                <span class="price" id="arcobaleno-price">€5,50</span>
+                <span class="price">€5,50</span>
 
                 <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
+                <button class="show-more-btn" type="button">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazioni:</strong> Naturale, Rosa, Azzurro</li>
@@ -473,8 +501,10 @@
                 <!-- Form preventivo -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
                     <input type="hidden" name="product" value="Arcobaleno">
+                    <input type="hidden" name="size_selected">
+                    <input type="hidden" name="packaging_selected">
 
                     <input type="text" name="name" placeholder="Il tuo nome" required>
                     <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
@@ -486,7 +516,9 @@
         </div>
 
         <!-- Card - Fiocco Farfalla -->
-        <div class="product-card">
+        <div class="product-card"
+             data-price-u="4.00"
+             data-gift-extra="2.00">
 
             <img src="fioccofarfalla.jpeg" alt="Fiocco Farfalla" class="product-image">
 
@@ -496,15 +528,15 @@
 
                 <!-- Selettori opzioni -->
                 <div class="options">
-                    <label for="size-farfalla">Taglia:</label>
-                    <select id="size-farfalla" class="option-select">
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
                         <option value="U">Unica</option>
                     </select>
 
-                    <label for="packaging-farfalla">Confezione regalo:</label>
-                    <select id="packaging-farfalla" class="option-select">
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione regalo</option>
+                        <option value="yes">Con confezione (+€2,00)</option>
                     </select>
                 </div>
 
@@ -519,10 +551,10 @@
                 </div>
 
                 <!-- Prezzo dinamico -->
-                <span class="price" id="farfalla-price">€4,00</span>
+                <span class="price">€4,00</span>
 
                 <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
+                <button class="show-more-btn" type="button">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazioni:</strong> Naturale, Rosa, Azzurro</li>
@@ -536,8 +568,10 @@
                 <!-- Form preventivo -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
                     <input type="hidden" name="product" value="Fiocco Farfalla">
+                    <input type="hidden" name="size_selected">
+                    <input type="hidden" name="packaging_selected">
 
                     <input type="text" name="name" placeholder="Il tuo nome" required>
                     <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
@@ -549,7 +583,9 @@
         </div>
 
         <!-- Card - Scarpine -->
-        <div class="product-card">
+        <div class="product-card"
+             data-price-u="2.50"
+             data-gift-extra="2.00">
 
             <img src="scarpine.jpeg" alt="Scarpine" class="product-image">
 
@@ -559,15 +595,15 @@
 
                 <!-- Selettori opzioni -->
                 <div class="options">
-                    <label for="size-scarpine">Taglia:</label>
-                    <select id="size-scarpine" class="option-select">
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
                         <option value="U">Unica</option>
                     </select>
 
-                    <label for="packaging-scarpine">Confezione regalo:</label>
-                    <select id="packaging-scarpine" class="option-select">
+                    <label>Confezione regalo:</label>
+                    <select class="option-select packaging-select">
                         <option value="no">Senza confezione</option>
-                        <option value="yes">Con confezione regalo</option>
+                        <option value="yes">Con confezione (+€2,00)</option>
                     </select>
                 </div>
 
@@ -582,10 +618,10 @@
                 </div>
 
                 <!-- Prezzo dinamico -->
-                <span class="price" id="scarpine-price">€2,00</span>
+                <span class="price">€2,50</span>
 
                 <!-- Dettagli tecnici -->
-                <button class="show-more-btn">Dettagli tecnici</button>
+                <button class="show-more-btn" type="button">Dettagli tecnici</button>
                 <div class="product-full-desc">
                     <ul>
                         <li><strong>Colorazioni:</strong> Naturale, Rosa, Azzurro</li>
@@ -599,8 +635,10 @@
                 <!-- Form preventivo -->
                 <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
                     <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-                    <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
                     <input type="hidden" name="product" value="Scarpine">
+                    <input type="hidden" name="size_selected">
+                    <input type="hidden" name="packaging_selected">
 
                     <input type="text" name="name" placeholder="Il tuo nome" required>
                     <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
@@ -620,7 +658,7 @@
     <p>&copy; 2025 Aromantica Candles – Tutti i diritti riservati</p>
     <p>
         <a href="tel:+393331112223"> +39 333 111 2223</a> |
-        <a href="mailto:info@almafavignana.it"> info@almafavignana.it</a>
+
         <a href="privacy.html">Privacy Policy</a>
     </p>
 </footer>

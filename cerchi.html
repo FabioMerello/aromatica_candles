@@ -62,33 +62,82 @@
     <h2>I nostri prodotti</h2>
     <div class="products-grid" id="products-grid">
 
-        <div id="product-rosa" class="product-card" data-price="15" data-category="cerchio">
-            <img src="https://example.com/cerchio-rosa.jpg" alt="Cerchio decorativo rosa">
-            <div class="product-info">
-                <h3>Cerchio Rosa</h3>
-                <p>Cerchio decorativo in legno verniciato rosa, perfetto per decorare stanze e feste.</p>
-                <span class="price">€15</span>
-                <a href="index.html#contact" class="btn">Richiedi info</a>
-            </div>
-        </div>
+        <!-- Card - Cerchio portaconfetti -->
+        <div class="product-card" data-base-price="3.70" data-gift-extra="0.00">
 
-        <div id="product-azzurra" class="product-card" data-price="18" data-category="cerchio">
-            <img src="https://example.com/cerchio-azzurro.jpg" alt="Cerchio decorativo azzurro">
-            <div class="product-info">
-                <h3>Cerchio Azzurro</h3>
-                <p>Cerchio azzurro con dettagli in tessuto, ideale come elemento decorativo elegante.</p>
-                <span class="price">€18</span>
-                <a href="index.html#contact" class="btn">Richiedi info</a>
-            </div>
-        </div>
+            <img src="cerchio_portaconfetti.jpeg" alt="Cerchio portaconfetti" class="product-image">
 
-        <div id="product-set" class="product-card" data-price="25" data-category="set">
-            <img src="https://example.com/set-cerchi.jpg" alt="Set di cerchi decorativi">
             <div class="product-info">
-                <h3>Set Cerchi</h3>
-                <p>Set di 3 cerchi decorativi, personalizzabili e perfetti per ogni tipo di allestimento.</p>
-                <span class="price">€25</span>
-                <a href="index.html#contact" class="btn">Richiedi info</a>
+                <h3>Cerchio portaconfetti</h3>
+                <p>Elegante cerchio portaconfetti, perfetto per feste e occasioni speciali. Realizzato con cura e disponibile in diverse combinazioni di colori.</p>
+
+                <!-- Selettori opzioni -->
+                <div class="options">
+                    <label>Taglia:</label>
+                    <select class="option-select size-select">
+                        <option value="U">Diametro 8 cm</option>
+                    </select>
+
+                    <label>Colore confetti:</label>
+                    <select class="option-select confetti-select">
+                        <option value="Bianco">Bianco</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Azzurro">Azzurro</option>
+                        <option value="Rosso">Rosso</option>
+                        <option value="Verde salvia">Verde salvia</option>
+                        <option value="Lilla">Lilla</option>
+                        <option value="Argento">Argento</option>
+                    </select>
+
+                    <label>Colore nastro:</label>
+                    <select class="option-select bow-select">
+                        <option value="Bianco">Bianco</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Azzurro">Azzurro</option>
+                        <option value="Rosso">Rosso</option>
+                        <option value="Verde salvia">Verde salvia</option>
+                        <option value="Lilla">Lilla</option>
+                        <option value="Argento">Argento</option>
+                    </select>
+
+                    <label>Colore fiori:</label>
+                    <select class="option-select flower-select">
+                        <option value="Blu/azzurro">Blu/azzurro</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+                </div>
+
+                <!-- Prezzo dinamico -->
+                <span class="price">€3,70</span>
+
+                <!-- Dettagli tecnici -->
+                <button class="show-more-btn">Dettagli tecnici</button>
+                <div class="product-full-desc">
+                    <ul>
+                        <li><strong>Taglia:</strong> diametro 8 cm</li>
+                        <li><strong>Prezzo:</strong> €3,70</li>
+                        <li><strong>Colori confetti:</strong> Bianco, Rosa, Azzurro, Rosso, Verde salvia, Lilla, Argento</li>
+                        <li><strong>Colori nastro:</strong> Bianco, Rosa, Azzurro, Rosso, Verde salvia, Lilla, Argento</li>
+                        <li><strong>Colori fiori:</strong> Blu/azzurro, Rosa, Beige</li>
+                    </ul>
+                </div>
+
+                <!-- Bottone form -->
+                <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+                <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+                    <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+                    <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+                    <input type="hidden" name="product" value="Cerchio portaconfetti">
+                    <input type="hidden" name="size_selected">
+                    <input type="hidden" name="confetti_selected">
+                    <input type="hidden" name="bow_selected">
+                    <input type="hidden" name="flower_selected">
+                    <input type="text" name="name" placeholder="Il tuo nome" required>
+                    <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+                    <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+                    <button type="submit" class="btn">Invia Richiesta</button>
+                </form>
             </div>
         </div>
 
@@ -100,7 +149,7 @@
     <p>&copy; 2025 Aromantica Candles – Tutti i diritti riservati</p>
     <p>
         <a href="tel:+393331112223"> +39 333 111 2223</a> |
-        <a href="mailto:info@almafavignana.it"> info@almafavignana.it</a>
+
         <a href="privacy.html">Privacy Policy</a>
     </p>
 </footer>

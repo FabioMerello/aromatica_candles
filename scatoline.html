@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collezione Porta Confetti – Aromantica Candles</title>
+  <link rel="icon" href="Aromantica.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <img src="Aromantica.png" alt="Aromantica logo" class="logo">
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <nav class="nav-links" id="nav">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#about">Chi siamo</a>
+    <a href="index.html#catalogo">Catalogo</a>
+    <a href="index.html#contact">Contatti</a>
+  </nav>
+</header>
+
+<!-- Hero categoria -->
+<section class="hero hero-small">
+  <div class="hero-overlay"></div>
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Collezione Porta Confetti</h1>
+    <p>Eleganti Porta Confetti personalizzati per ogni occasione</p>
+  </div>
+</section>
+
+<!-- Filtri -->
+<div class="filter-bar" data-aos="fade-up">
+  <input type="text" id="search-input" placeholder="Cerca prodotto...">
+  <select id="sort-price">
+    <option value="default">Ordina per prezzo</option>
+    <option value="asc">Prezzo: dal più basso</option>
+    <option value="desc">Prezzo: dal più alto</option>
+  </select>
+
+  <select id="filter-category">
+    <option value="all">Tutte le categorie</option>
+    <option value="cartoncino">Cartoncini</option>
+    <option value="set">Set</option>
+  </select>
+
+  <select id="filter-price">
+    <option value="all">Tutti i prezzi</option>
+    <option value="low">Meno di €15</option>
+    <option value="mid">€15 - €20</option>
+    <option value="high">Più di €20</option>
+  </select>
+</div>
+
+<!-- Prodotti -->
+<section class="products-section" data-aos="fade-up">
+  <h2>I nostri prodotti</h2>
+  <div class="products-grid" id="products-grid">
+
+    <!-- Card - Orsetti -->
+    <div class="product-card" data-base-price="3.00" data-gift-extra="0.00">
+
+      <img src="orsetti.jpeg" alt="Orsetti" class="product-image">
+
+      <div class="product-info">
+        <h3>Orsetti</h3>
+        <p>Candela a forma di orsetti, realizzata artigianalmente in cera naturale. Perfetta come idea regalo o decorazione originale.</p>
+
+        <!-- Selettori opzioni -->
+        <div class="options">
+          <label>Taglia:</label>
+          <select class="option-select size-select">
+            <option value="U">h 10×9</option>
+          </select>
+
+          <label>Confezione regalo:</label>
+          <select class="option-select packaging-select">
+            <option value="no">Senza confezione</option>
+            <option value="yes">Con confezione</option>
+          </select>
+        </div>
+
+        <!-- Colorazioni / dettagli -->
+        <div class="color-preview">
+          <span class="color-label">Colore scatola:</span>
+          <div class="color-options">
+            <div class="color-circle" style="background:#f4b6c2;" title="Rosa"></div>
+            <div class="color-circle" style="background:#a8d0e6;" title="Azzurro"></div>
+          </div>
+          <span class="color-label" style="margin-left:10px;">Colore confetti:</span>
+          <div class="color-options">
+            <div class="color-circle" style="background:#f4b6c2;" title="Rosa"></div>
+            <div class="color-circle" style="background:#a8d0e6;" title="Azzurro"></div>
+            <div class="color-circle" style="background:#ffffff; border:1px solid #ccc;" title="Bianchi"></div>
+          </div>
+        </div>
+
+        <!-- Prezzo dinamico -->
+        <span class="price">€3,00</span>
+
+        <!-- Dettagli tecnici -->
+        <button class="show-more-btn">Dettagli tecnici</button>
+        <div class="product-full-desc">
+          <ul>
+            <li><strong>Taglia:</strong> h 10×9 cm</li>
+            <li><strong>Colore scatola:</strong> Rosa, Azzurro</li>
+            <li><strong>Colore confetti:</strong> Rosa, Azzurro, Bianchi</li>
+          </ul>
+        </div>
+
+        <!-- Bottone form -->
+        <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+        <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+          <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+          <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+          <input type="hidden" name="product" value="Orsetti">
+          <input type="hidden" name="size_selected">
+          <input type="hidden" name="packaging_selected">
+          <input type="text" name="name" placeholder="Il tuo nome" required>
+          <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+          <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+          <button type="submit" class="btn">Invia Richiesta</button>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Card - Borsetta/Mongolfiera -->
+    <div class="product-card" data-base-price="3.00" data-gift-extra="0.00">
+
+      <img src="borsetta_mongolfiera.jpeg" alt="Borsetta/Mongolfiera" class="product-image">
+
+      <div class="product-info">
+        <h3>Borsetta/Mongolfiera</h3>
+        <p>Candela a forma di borsetta o mongolfiera, realizzata artigianalmente in cera naturale. Perfetta come idea regalo o decorazione originale.</p>
+
+        <!-- Selettori opzioni -->
+        <div class="options">
+          <label>Taglia:</label>
+          <select class="option-select size-select">
+            <option value="U">h 8×7</option>
+            <option value="U2">h 14×9</option>
+          </select>
+
+          <label>Confezione regalo:</label>
+          <select class="option-select packaging-select">
+            <option value="no">Senza confezione</option>
+            <option value="yes">Con confezione</option>
+          </select>
+        </div>
+
+        <!-- Colorazioni / dettagli -->
+        <div class="color-preview">
+          <span class="color-label">Colore scatola:</span>
+          <div class="color-options">
+            <div class="color-circle" style="background:#f4b6c2;" title="Rosa"></div>
+            <div class="color-circle" style="background:#a8d0e6;" title="Azzurro"></div>
+          </div>
+          <span class="color-label" style="margin-left:10px;">Colore confetti:</span>
+          <div class="color-options">
+            <div class="color-circle" style="background:#f4b6c2;" title="Rosa"></div>
+            <div class="color-circle" style="background:#a8d0e6;" title="Azzurro"></div>
+            <div class="color-circle" style="background:#ffffff; border:1px solid #ccc;" title="Bianchi"></div>
+          </div>
+        </div>
+
+        <!-- Prezzo dinamico -->
+        <span class="price">€3,00</span>
+
+        <!-- Dettagli tecnici -->
+        <button class="show-more-btn">Dettagli tecnici</button>
+        <div class="product-full-desc">
+          <ul>
+            <li><strong>Taglie:</strong> h 8×7 cm / h 14×9 cm</li>
+            <li><strong>Colore scatola:</strong> Rosa, Azzurro</li>
+            <li><strong>Colore confetti:</strong> Rosa, Azzurro, Bianchi</li>
+          </ul>
+        </div>
+
+        <!-- Bottone form -->
+        <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+        <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+          <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+          <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+          <input type="hidden" name="product" value="Borsetta/Mongolfiera">
+          <input type="hidden" name="size_selected">
+          <input type="hidden" name="packaging_selected">
+          <input type="text" name="name" placeholder="Il tuo nome" required>
+          <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+          <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+          <button type="submit" class="btn">Invia Richiesta</button>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Card - Casetta 1...2...3...5 -->
+    <div class="product-card" data-base-price="3.00" data-gift-extra="0.00">
+
+      <img src="casetta12345.jpeg" alt="Casetta 1...2...3...5" class="product-image">
+
+      <div class="product-info">
+        <h3>Casetta 1...2...3...4...5</h3>
+        <p>Candela artigianale a forma di casetta, realizzata in cera naturale. Perfetta come idea regalo o decorazione originale.</p>
+
+        <!-- Selettori opzioni -->
+        <div class="options">
+          <label>Taglia:</label>
+          <select class="option-select size-select">
+            <option value="U">h 8×5,5</option>
+          </select>
+
+          <label>Confezione regalo:</label>
+          <select class="option-select packaging-select">
+            <option value="no">Senza confezione</option>
+            <option value="yes">Con confezione</option>
+          </select>
+        </div>
+
+        <!-- Colori confetti -->
+        <div class="color-preview">
+          <span class="color-label">Colore confetti:</span>
+          <div class="color-options">
+            <div class="color-circle" style="background:#f4b6c2;" title="Rosa"></div>
+            <div class="color-circle" style="background:#a8d0e6;" title="Azzurro"></div>
+            <div class="color-circle" style="background:#ffffff; border:1px solid #ccc;" title="Bianchi"></div>
+          </div>
+        </div>
+
+        <!-- Prezzo dinamico -->
+        <span class="price">€3,00</span>
+
+        <!-- Dettagli tecnici -->
+        <button class="show-more-btn">Dettagli tecnici</button>
+        <div class="product-full-desc">
+          <ul>
+            <li><strong>Taglia:</strong> h 8×5,5 cm</li>
+            <li><strong>Colore confetti:</strong> Rosa, Azzurro, Bianchi</li>
+          </ul>
+        </div>
+
+        <!-- Bottone form -->
+        <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+        <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+          <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+          <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+          <input type="hidden" name="product" value="Casetta 1...2...3...4...5">
+          <input type="hidden" name="size_selected">
+          <input type="hidden" name="packaging_selected">
+          <input type="text" name="name" placeholder="Il tuo nome" required>
+          <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+          <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+          <button type="submit" class="btn">Invia Richiesta</button>
+        </form>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Aromantica Candles – Tutti i diritti riservati</p>
+  <p>
+    <a href="tel:+393331112223"> +39 333 111 2223</a> |
+
+    <a href="privacy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+
+</script>
+</body>
+</html>

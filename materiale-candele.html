@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collezione Flowers – Aromantica Candles</title>
+    <link rel="icon" href="Aromantica.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+    <img src="Aromantica.png" alt="Aromantica logo" class="logo">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">Chi siamo</a>
+        <a href="index.html#catalogo">Catalogo</a>
+        <a href="index.html#contact">Contatti</a>
+    </nav>
+</header>
+
+<!-- Hero categoria -->
+<section class="hero hero-small">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <h1>Collezione Flowers</h1>
+        <p>Bomboniere eleganti a tema floreale per ogni occasione speciale</p>
+    </div>
+</section>
+
+
+
+<!-- Sezione Materiale da Candela -->
+<section class="material-candela-section">
+    <div class="material-container">
+
+        <!-- Descrizione -->
+        <div class="material-info">
+            <h2>KeraSoy Pillar 4120 - Kerax</h2>
+            <p>Cera eccellente per la creazione di candele in stampi. Facile da usare con stampi in silicone, policarbonato e metallo, biodegradabile al 100%, senza emissione di fumo o fuliggine. Ideale per fragranze e coloranti, vegana e certificata senza test sugli animali.</p>
+
+            <ul>
+                <li>Punto di fusione: 57°C - 63°C (non superare 75°C)</li>
+                <li>Disponibile in: 1kg, 5kg, 10kg, 20kg, 40kg, 60kg, 80kg</li>
+                <li>Spedizione gratuita per 80kg</li>
+                <li>Per disponibilità contattare il Servizio Clienti: <strong>3755991079</strong></li>
+            </ul>
+
+            <table class="price-table">
+                <thead>
+                <tr>
+                    <th>Quantità</th>
+                    <th>Prezzo (€)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>1 kg</td><td>10,70</td></tr>
+                <tr><td>5 kg</td><td>53,50</td></tr>
+                <tr><td>10 kg</td><td>106</td></tr>
+                <tr><td>20 kg</td><td>179</td></tr>
+                <tr><td>40 kg</td><td>347,50</td></tr>
+                <tr><td>60 kg</td><td>510</td></tr>
+                <tr><td>80 kg</td><td>656 (spedizione gratuita)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Form Ordine -->
+        <div class="material-form">
+            <h3>Richiedi Ordine</h3>
+            <form id="kerax-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+                <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+                <input type="hidden" name="product" value="KeraSoy Pillar 4120">
+
+                <label>Quantità:</label>
+                <select name="quantity" id="quantity-select" required>
+                    <option value="1kg">1 kg</option>
+                    <option value="5kg">5 kg</option>
+                    <option value="10kg">10 kg</option>
+                    <option value="20kg">20 kg</option>
+                    <option value="40kg">40 kg</option>
+                    <option value="60kg">60 kg</option>
+                    <option value="80kg">80 kg</option>
+                </select>
+
+                <p id="price-display" style="font-weight:bold; margin-top:5px;">Prezzo: €10,70</p>
+
+                <label>Nome:</label>
+                <input type="text" name="name" placeholder="Il tuo nome" required>
+
+                <label>Telefono:</label>
+                <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+
+                <label>Messaggio aggiuntivo:</label>
+                <textarea name="message" placeholder="Note o richieste particolari" rows="4"></textarea>
+
+                <button type="submit" class="btn">Invia Ordine</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- Sezione PDF moderna e responsive -->
+<div class="pdf-section">
+    <h2>Schede PDF disponibili</h2>
+    <div class="pdf-buttons">
+        <a href="scheda-tecnica1.pdf" target="_blank" class="pdf-btn">Scheda tecnica 1</a>
+        <a href="scheda-tecnica2.pdf" target="_blank" class="pdf-btn">Scheda tecnica 2</a>
+        <a href="scheda-sicurezza.pdf" target="_blank" class="pdf-btn">Scheda tecnica 3</a>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Aromantica Candles – Tutti i diritti riservati</p>
+    <p>
+        <a href="tel:+393331112223"> +39 333 111 2223</a> |
+         |
+        <a href="privacy.html">Privacy Policy</a>
+    </p>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const priceMap = {
+            "1kg": 10.70,
+            "5kg": 53.50,
+            "10kg": 106.00,
+            "20kg": 179.00,
+            "40kg": 347.50,
+            "60kg": 510.00,
+            "80kg": 656.00
+        };
+
+        const select = document.getElementById("quantity-select");
+        const priceDisplay = document.getElementById("price-display");
+
+        function updatePrice() {
+            const selected = select.value;
+            const price = priceMap[selected];
+            priceDisplay.textContent = `Prezzo: €${price.toFixed(2).replace('.', ',')}`;
+        }
+
+        select.addEventListener("change", updatePrice);
+
+        // Aggiorna il prezzo iniziale
+        updatePrice();
+    });
+</script>
+</body>
+</html>

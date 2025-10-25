@@ -213,24 +213,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!sizeSelect || !packagingSelect || !priceDisplay) return;
 
-        // Prezzi dinamici dal dataset
-        const basePriceS = parseFloat(card.dataset.priceS || card.dataset.basePrice || "0");
-        const basePriceM = parseFloat(card.dataset.priceM || card.dataset.basePrice || "0");
-        const basePriceL = parseFloat(card.dataset.priceL || card.dataset.basePrice || "0");
         const giftExtra = parseFloat(card.dataset.giftExtra || "0");
 
-        function getBasePrice() {
-            switch (sizeSelect.value) {
-                case "M": return basePriceM;
-                case "L": return basePriceL;
-                default: return basePriceS;
-            }
-        }
-
         function updatePrice() {
-            let price = getBasePrice();
-            if (packagingSelect.value === "yes") price += giftExtra;
-            priceDisplay.textContent = `€${price.toFixed(2).replace(".", ",")}`;
+            // --- leggi dinamicamente il prezzo dalla taglia selezionata ---
+            const sizeValue = sizeSelect.value.toUpperCase(); // S, M, L, U, ecc.
+            let sizePrice = parseFloat(card.dataset[`price${sizeValue}`] || 0);
+
+            // Se non esiste price{TAGLIA}, prendi data-base-price
+            if (!sizePrice) {
+                sizePrice = parseFloat(card.dataset.basePrice || 0);
+            }
+
+            let finalPrice = sizePrice;
+            if (packagingSelect.value === "yes") finalPrice += giftExtra;
+
+            priceDisplay.textContent = `€${finalPrice.toFixed(2).replace(".", ",")}`;
         }
 
         function syncFormFields() {

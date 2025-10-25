@@ -60,28 +60,30 @@
   <div class="products-grid" id="products-grid">
 
 
-    <!-- Card - Peonie -->
-    <div class="product-card">
+    <div class="product-card"
+         data-price-s="2.00"
+         data-price-m="3.50"
+         data-price-l="5.00"
+         data-gift-extra="2.00">
 
       <img src="peonie.jpeg" alt="Peonie" class="product-image">
-
       <div class="product-info">
         <h3>Peonie</h3>
         <p>Delicata candela a forma di peonia, realizzata artigianalmente in cera naturale. Perfetta come decorazione elegante o idea regalo raffinata.</p>
 
         <!-- Selettori opzioni -->
         <div class="options">
-          <label for="size">Taglia:</label>
-          <select id="size" class="option-select">
+          <label>Taglia:</label>
+          <select class="option-select size-select">
             <option value="S">S</option>
             <option value="M">M</option>
             <option value="L">L</option>
           </select>
 
-          <label for="packaging">Confezione regalo:</label>
-          <select id="packaging" class="option-select">
+          <label>Confezione regalo:</label>
+          <select class="option-select packaging-select">
             <option value="no">Senza confezione</option>
-            <option value="yes">Con confezione regalo</option>
+            <option value="yes">Con confezione (+€2,00)</option>
           </select>
         </div>
 
@@ -94,7 +96,7 @@
         </div>
 
         <!-- Prezzo dinamico -->
-        <span class="price" id="teddy-price">€2,00</span>
+        <span class="price">€2,00</span>
 
         <!-- Dettagli tecnici -->
         <button class="show-more-btn">Dettagli tecnici</button>
@@ -107,19 +109,17 @@
           </ul>
         </div>
 
-        <!-- Bottone che apre il form -->
+        <!-- Bottone form -->
         <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
-
-        <!-- Form preventivo -->
         <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
           <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
-          <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+          <input type="hidden" name="to" value="91ritarusciano@gmail.com">
           <input type="hidden" name="product" value="Peonie">
-
+          <input type="hidden" name="size_selected">
+          <input type="hidden" name="packaging_selected">
           <input type="text" name="name" placeholder="Il tuo nome" required>
           <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
           <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
-
           <button type="submit" class="btn">Invia Richiesta</button>
         </form>
       </div>
@@ -185,7 +185,7 @@
         <!-- Form preventivo -->
         <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
           <input type="hidden" name="access_key" value="693f3d01-1add-44f1-a79e-3ebff85f72cd">
-          <input type="hidden" name="to" value="beautyequipment.na@gmail.com">
+          <input type="hidden" name="to" value="91ritarusciano@gmail.com">
           <input type="hidden" name="product" value="Rose">
 
           <!-- Hidden dinamici -->
@@ -251,7 +251,7 @@
                 class="product-form"
         >
           <input type="hidden" name="access_key" value="693f3d01-1add-44f1-a79e-3ebff85f72cd" />
-          <input type="hidden" name="to" value="beautyequipment.na@gmail.com" />
+          <input type="hidden" name="to" value="91ritarusciano@gmail.com" />
           <input type="hidden" name="product" value="Margherite" />
 
           <!-- CAMPI NASCOSTI DINAMICI -->
@@ -273,15 +273,84 @@
     </div>
 
 
+    <!-- Card - Cuore e Fiori -->
+    <div class="product-card" data-base-price="2.00" data-gift-extra="2.00">
+
+      <img src="cuorefiori.jpeg" alt="Cuore e Fiori" class="product-image">
+
+      <div class="product-info">
+        <h3>Cuore e Fiori</h3>
+        <p>Delicata candela a forma di cuore con fiori, realizzata artigianalmente in cera naturale. Ideale come regalo o decorazione elegante.</p>
+
+        <!-- Selettori opzioni -->
+        <div class="options">
+          <label>Taglia:</label>
+          <select class="option-select size-select">
+            <option value="U">Unica</option>
+          </select>
+
+          <label>Confezione regalo:</label>
+          <select class="option-select packaging-select">
+            <option value="no">Senza confezione</option>
+            <option value="yes">Con confezione (+€2,00)</option>
+          </select>
+        </div>
+
+        <!-- Colorazioni -->
+        <div class="color-preview">
+          <span class="color-label">Colorazioni:</span>
+          <div class="color-options">
+            <div class="color-circle" style="background:#e0c59b;" title="Naturale"></div>
+            <div class="color-circle" style="background:#f4b6c2;" title="Rosa"></div>
+            <div class="color-circle" style="background:#a8d0e6;" title="Azzurro"></div>
+            <div class="color-circle" style="background:#c8a2c8;" title="Lilla"></div>
+          </div>
+        </div>
+
+        <!-- Prezzo dinamico -->
+        <span class="price">€2,00</span>
+
+        <!-- Dettagli tecnici -->
+        <button class="show-more-btn">Dettagli tecnici</button>
+        <div class="product-full-desc">
+          <ul>
+            <li><strong>Colorazioni:</strong> Naturale, Rosa, Azzurro, Lilla</li>
+            <li><strong>Taglia Unica:</strong> 5×5 cm — 18 g</li>
+          </ul>
+        </div>
+
+        <!-- Bottone form -->
+        <button class="toggle-form-btn" type="button">Richiedi Preventivo</button>
+        <form action="https://api.web3forms.com/submit" method="POST" class="product-form">
+          <input type="hidden" name="access_key" value="b7d6a6f7-a7d7-44b5-99388884-f0a6b62a4449">
+          <input type="hidden" name="to" value="91ritarusciano@gmail.com">
+          <input type="hidden" name="product" value="Cuore e Fiori">
+          <input type="hidden" name="size_selected">
+          <input type="hidden" name="packaging_selected">
+          <input type="text" name="name" placeholder="Il tuo nome" required>
+          <input type="tel" name="phone" placeholder="Telefono" required pattern="[0-9+ ]{6,}">
+          <textarea name="message" placeholder="Messaggio o richieste aggiuntive" rows="3"></textarea>
+          <button type="submit" class="btn">Invia Richiesta</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
   </div>
 </section>
 
-<!-- Footer -->
+<!-- Footer 91ritarusciano@gmail.com -->
 <footer>
   <p>&copy; 2025 Aromantica Candles – Tutti i diritti riservati</p>
   <p>
     <a href="tel:+393331112223"> +39 333 111 2223</a> |
-    <a href="mailto:info@almafavignana.it"> info@almafavignana.it</a> |
+
     <a href="privacy.html">Privacy Policy</a>
   </p>
 </footer>
